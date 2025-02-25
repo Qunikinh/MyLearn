@@ -1,0 +1,30 @@
+{
+    "files.associations": {
+        "tset.C": "cpp",
+        "15.C": "cpp",
+        "string.h": "c",
+        "math.h": "c",
+        "limits": "c",
+        "4,c": "cpp",
+        "algorithm": "c"
+    },
+    "Codegeex.GenerationPreference": "line by line",
+    "marscode.enableCodelens": {
+        "enableInlineDocumentation": false,
+        "enableInlineExplain": false,
+        "enableInlineUnitTest": false
+    },
+    "Codegeex.Chat.fontSize": 15,
+    "Codegeex.CompletionDelay": 0.5,
+    "Codegeex.RepoIndex": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./prictise",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "C_Cpp.errorSquiggles": "disabled"
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css</title>
+    <!-- 外部样式： -->        <!-- 路径：同级直接文件名，下级要加文件夹，上级要加“../” -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- 内部样式: -->
+    <style>
+        i{color: blue;}
+        /* 标签名{
+            属性：属性值
+        } */
+        /* 
+            *{}  所有元素
+        */
+    </style>
+</head>
+<body>
+    <h2>插入样式方式</h2>
+    <p ><u style="color: red;">这是自带style</u></p>
+    <!-- 自带比外部优先级高 -->
+    <p><i>这是内部样式</i></p>
+    <p><u>这是外部样式</u></p>
+    <!-- 包在里面的优先级高 --><hr>
+    
+    <h2>下面是选择器</h2>
+    <p><u>这是标签选择</u></p>
+    <p id="test">这是id选择</p>
+    <p class="c1 c2">这是类选择c1 c2</p>
+    <p class="c1 c3">这是类选择c1 c3</p><hr>
+
+    
+</body>
+</html>
