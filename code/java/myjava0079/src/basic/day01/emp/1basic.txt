@@ -1,0 +1,359 @@
+授课顺序：basic.day01:MyJava,SortAPIDemo,JFrameHelloWorld
+basic.day02:VarDemo2,CastDemo2,LongFloatDemo，CharDemo2,LogicDemo2   学生完成实验1
+basic.day03:ArrayDemo,ExpandArrayDemo,SortDemo,SortAPIDemo,CharCounterDemo   学生完成实验2
+
+basic.day01:MyJava,SortAPIDemo,JFrameHelloWorld  （第1次课）
+jdk idea的安装。jdk,api,jre,jvm，跨平台
+
+1.第一个例程MyJava，此例教学目标有3点：
+	a.牢固记住：在Java中，必须及如何建立：一个Java的project项目-package包-class类-method方法比如main()。
+		用Java开发项目编程程序，就是写一个个的class,在class中定义属性、常量、方法。
+		程序的本质就是用方法处理初始数据，方法的运行得到结果数据。比如，oop.day01.Book.class,oop.day01.Point.class
+	b.注意：用英文字符取名字，不要用中文取名字。Java命名规范：
+	
+		1.1 Java命名规范  P37   http://zhidao.baidu.com/question/123562504.html
+		包名：包名是全小写的名词，中间可以由点分隔开，“驼峰规则”，例如：java.awt.vent; basic.day01；
+		类名：首字母大写，通常由多个单词合成一个类名，要求每个单词的首字母也要大写，例如HelloWorldApp,  MyJava；
+		接口名：命名规则与类名相同，例如interface Collection；
+		方法名：往往由多个单词合成，第一个单词通常为动词，第一个单词首字母小写，然后后面的每个单词首字母都要大写，例如：balanceAccount()，isButtonPressed(), main(), sort()；
+		变量名：全小写，一般为名词，例如：length；（P34）
+		常量名：基本数据类型的常量名为全大写，如果是由多个单词构成，可以用下划线隔开，例如：int YEAR, int WEEK_OF_MONTH；如果是对象类型的常量，则是大小写混合，由大写字母把单词隔开。
+
+		关于关键字：1) new, if， int 等，50个关键字。关键字不能用来命名。
+		  2) goto const保留字（保留关键字，Java留下的）
+		  3) null, true, false 是字面量，不是关键字。
+
+		哪些是关键字： A.if  B.goto  C.null  D.typeof
+	
+	c.main()-psvm,
+	  sout-System.out.println()
+	  idea中快捷键的使用，扩展学习：https://www.bilibili.com/video/BV1y94y1m7Ew?p=11&vd_source=b3ed5378dfd63d30e92c06663c4911d7
+	  ctrl+/         单行注释
+	  ctrl+shift+/   多行注释
+	  /**enter       方法的注释
+	  ctrl+d         向下复制一行
+	  alt+shift+down 向下移动一行
+	  alt+shift+up   向上移动一行
+      ctrl+选中指定的结构 点击鼠标  进去查看源码
+      alt+enter      万能修复键 万能补全
+      alt+left       回到前面的编辑页面
+      alt+right      回到后面的编辑页面
+      ctrl+alt+L     格式化
+      ctrl+p         提示方法参数类型
+      alt+7，alt+F12  查看类的结构
+
+
+2.第二个例程SortAPIDemo.java,此例教学目标有3点：
+  	a.引出JDK,JRE,API,熟悉api中最经常会用到的方法。
+  	  图示；API发群里，带学生看API
+	  Java IDE:Java集成开发工具，开发环境，普遍在用的有eclipse,Idea
+
+	  JDK：Java Development Kit，java开发工具包，是整个Java的核心，包括了Java运行环境JRE、Java工具和Java基础类库。
+	  JRE：Java Runtime Enviroment，Java运行环境，包含JVM标准实现及Java核心类库。
+	  JVM: Java Virtual Machine ，java虚拟机，运行Java程序的软件，是整个java实现跨平台的最核心的部分。  source，binary，decimal
+
+	  API: Application Programming Interface，应用程序编程接口，类库
+	  
+	  JDK、JRE和JVM的关系图示：https://blog.csdn.net/qq_15064951/article/details/82814808
+                                 https://blog.csdn.net/zl834205311/article/details/88537069
+
+  	b.从Java提供有很多很好用的API，也能看到Java好上手，能学会，要有信心，每次课每个实验都要跟上
+
+  	c.JVM，跨平台，src-bin，带学生看bin,Class字节码文件，然后讲java特点及“跨平台”，并介绍当前的主流平台。
+	  idea，myeclipse,eclipse,都是Java程序Java项目的开发环境。开发的项目最后交给用户的是bin中的class文件，src中的源程序是不给用户的，用户看不到。
+
+		2.1 Java的特点
+			1) Java 特点: 简单, 面向对象, 跨平台, 安全, 多线程支持
+			2) Java是跨平台的：Java 通过JVM 实现了跨平台技术。
+			   Java 源代码（*.java）经过Java的编译器编译成Java字节码（*.class）,执行Java字节码。Java字节码经过JVM的解释为具体平台的具体指令，并执行。
+		       “跨平台”：Java对各个主流平台都提供了对应的JVM。所以，JAVA字节码可以在所有不同的平台上解释执行，Java 的字节码是可以跨平台执行的，“Java是跨平台的”。
+
+	  JVM: Java Virtual Machine ，java虚拟机
+
+3.第三个例程JFrameHelloWorld，此例教学目标有3点：
+  	a.必须习惯依赖API,感受理解API对于程序员的意义
+  	b.swing与当前的GUI
+  	c.B/S模式，模式-规范-接口 ，下学期学习Java web开发。
+
+4.教学要求:4样东东：代码,笔记,书上例程，实验练习题
+   4.1 时间上：
+	   课堂授课：12--15周次 *80minutes/次=20hours
+	   课内实验：12--15周次 *80minutes/次=20hours
+	   对比，培训机构：讲课大约550-950小时+每天晚上练习2小时+每五天一次周考+相应的练习
+   4.2 课内教学目标：（1）入门， 核心是形成“面向对象”思想 （2）Java我能学会
+   4.3 基本要求：（1）每次课的代码，弄懂，会写 （2）笔记  （3）书上例程  （4）11个实验
+
+	   测试2次
+
+   4.4 编程是一项技能，想要用这项技能谋生赚钱/找到工作，必须多学多练，课外学习/自学，视频，必须写代码，“程序是敲会的，不是看会的，不是听会的”
+   4.5 希望与大家多交流，钱651776，QQ群里有，微信13486251776。午休时间请勿电话，谢谢！
+
+ 5.练习实验1
+
+	关于实验报告：
+	  实验报告：一，实验报告文档取名统一规范，群里有模板  二，只需要提交电子版，上传提交到对应的实验报告文件夹中，请不要扔在根目录中。
+
+
+第2次课授课路线及主要例程：basic.day02:VarDemo,CastDemo,LongFloatDemo，CharDemo,LogicDemo （第2-3次课）
+
+	关于8个基本数据类型：
+	1）VarDemo.java，a.强调java是强类型语言，变量的作用域，等有关内容  b.int类型，p35表，8个基本类型，先讲4个整数2个小数，然后char及CharDemo2.java，讲unicode
+
+	2）charDemo.java,第14行，//char c2="zhong";  a."引用类型"   b.图示Java内存空间    c,生成随机整数[0,26)
+
+	3）CastDemo,LongFloatDemoCastDemo.java,LongFloatDemo ,Java的8种基本数据类型,Java内部只有二进制补码 a.数据类型转换，b.Java内部只有补码，复习补码
+
+	4）LogicDemo.java , boolean 逻辑类型
+       从键盘输入的是String， 怎样从键盘输入一个整数int、怎样从键盘输入一个字符char？
+
+引语：程序中数据表示的形式有两种需要：1)常量：值固定不变的，P33  例2-6 写在方法中的常量，final    例2-7 写在类中的常量，static final。
+      2)变量：值需要变化的，就像数学中的比如f(x)=x+1（x∈R），再比如s（r）=π× r 2（r∈R）
+1.Java变量: VarDemo.java
+ 1) 变量就是自然语言中的代词
+   Person zhangsan;
+   int age = 20;
+      //age= 00000000 00000000 00000000 00010100
+   System.out.println(age);
+ 2) A Java 内部只有二进制补码
+   B Java 内部采用补码运算, 自动发送上溢出和下溢出
+   C 补码的负数 最高位是 1, 是符号位
+   D Java内部没有10进制, 但是Java尽量按照人类的习惯输入输出
+ 3)  Java是强类型语言:
+   A 变量必须先声明，并且初始化以后使用
+   B 变量必须有明确的类型
+   C 变量不能重复定义
+ 4) 变量的作用域:
+   A 在声明的地方开始，到块结束为止({})
+   B 离开变量的作用域结束，变量将被回收。
+
+2.Java的数据类型 P35    分为基本数据类型 和引用类型
+ 1) 基本数据类型: 8种    P37表2-2,记住表上的初始值、取值范围等。
+   byte, short, int, long
+   float, double
+   char
+   boolean
+ 2) 整数类型  byte, short, int, long, 都是有符号(补码)整数
+  byte   8位补码     最大值 0x7f  127  最小值 0x80 -128
+  short 16位有符号数  0x7fff 32767      0x8000 -32768
+  int   32位         0x7fffffff 2G-1 2^31-1 21亿 0x80000000 -2G
+  long  64位 ....      0x7fffffffffffffff
+  整数字面量(直接量) 默认是int类型, 如果不超出范围, 可以给类型直接赋值.
+  使用整数类型(byte, short, int) 要注意取值范围, 如果超范围java底层byte,short按照32位计算。
+  long 类型的字面量使用"L","l" 后缀。
+  
+  注意：往往需要用long 
+
+ 3) 浮点数, 小数  LongFloatDemo.java
+  float: 32位 其中: 1位符号位, 8位指数, 23位尾数 （精度: 23 位）
+  int max = 01111111 11111111 11111111 11111111
+  float f = 1.111111 11111111 11111111 1 * 2^00011110
+
+ double: 64位 其中: 1位符号位, 11位指数, 52位尾数（精度:52 位）
+
+ 浮点数的字面量: 默认是double, D d 后缀是double, f F 是float
+
+ 注意：float太不精确，一般不用，一般用double
+
+ 4)字符类型 char, 字符是一个16位无符号整数, 是一个二进制数数值，是一个字符的unicode编码值。  CharDemo2.java
+   unicode 编码: 是全球范围内的编码方法, 编制了英文, 中,日,韩 阿拉伯, 希伯来, ..... 8万+ 字符。可以直接存储汉字
+
+   中 : 20013
+   A : 65
+
+   其中英文字符部分与ASCII 兼容, 英文字符和数字是连续编码的.
+   ASCII: 0~128
+   Java char 的范围 0~65535 不能表示全部unicode 但是可以表示最常用的部分
+
+   最小值:0, 最大值:65535 = 2^16-1
+    字符字面量其实就是整数字面量
+
+   特殊字符采用转义字符表示:
+     如: '\n' newLine 换行
+        '\r' return 回车
+  		'\t' tab
+     	'\\'
+     	'\b' backspace
+     	'\f' pagebreak
+        '\''
+        '\"'  '\u4e2d'
+
+     char c = '\\';
+
+     'c' -> 'C'
+     'a'-'A' = x - X
+     X = x - ('a'-'A');
+
+  5) boolean 布尔类型 ： 真(true)/假(false)
+
+
+3. 数据类型转换 char -> byte -> short -> int -> long -> float -> double     CastDemo2.java,LongFloatDemo.java
+
+ 1) 自动类型转换,正方向,小类型到大类型的转换会自动完成 ， 符号位会自动扩展, 负数补1, 正数补0, 保证补码数值不变。
+          自动类型转换也叫"隐式类型转换", 是自动发生的, 一般不需要处理。注意, 整数到浮点数转换会损失精确度。
+
+ 2) 强制类型转换(显性类型转换),是按照反方向进行 的转换, 需要程序员自己明确处理。需要注意数据范围，强制转换可能会溢出, 或者损失精度，
+
+方法       运算符      流程控制语句
+
+4. Java的方法Method, 功能, 动作
+ 1) 比如： y=f(x)=3x+4;
+ 2) 方法的语法
+   (修饰词)(返回值类型)(方法名)(参数列表){
+   	//方法体
+   }
+  public static int f(int x){
+    int y = 3 * x + 4;
+    return y;
+  }
+    public static void main(String[] args){}
+
+ 4) 如果有返回值定义就必须有return语句、返回值、返回值类型兼容的数据
+ 5) 方法的参数和方法内部的变量，都是局部变量,局部变量作用域仅在方法内部。 （局部变量，重点）
+ 6) 形参: 方法的参数,是临时变量。
+           实参: 方法调用时，实际传递进来的参数变量。
+
+5.常量：P33   例2-6 写在方法中的常量，final      例2-7 写在类中的常量，static final
+
+6.Java 运算符
+ 1) 数学运算符  + - * / %
+  A 运算的封闭性(补码运算的封闭性):
+    1.同种类型参与运算(可能需要自动类型转换)
+    2.返回同种类型(可能发生:上溢出和下溢出)
+    3.byte, short, char 按照int运算
+    如: int a = 1 + 'A';
+  B. 整数的除法是整除, 除以2相当于移位运算(移动小数点)
+  C.Java中字面量的运算被Javac优化了, 优化为一个固定的常量.
+  D. % 计算除法的余数
+    1. 0 对其他数的 余数 是0
+    2. n%3 是 周期函数, 函数值 [0,3)
+    3. 负数的余数是负数(考试可能出现, 工作中很少用)
+
+ 2) 自增(自减)运算 ++ --
+  1.可以将当前变量自我增加(减少)1
+  2. i++, 后++, 先将i的值作为整个表达的值, 后i加1。比如：(i++)%3
+  3. ++i, 先++, 先i加1, 后将i的值作为整个表达的值。
+
+
+ 3) 逻辑与比较运算 LogicDemo2.java    P45
+  1. 逻辑运算 与(并且)&&  或(或者)||  非(否则)!
+   	 非短路的逻辑运算  &  | , 比较少使用, 逻辑不合理。
+  2. 比较运算, 比较变量的值, 就是逐"位"比较值: > >= < <= == !=
+
+ 4)基本类型变量的值就是基本值，如: i=1
+           引用类型变量的值是对象地址值。(在面向对象阶段详细讲解)
+    int i = 1;
+    long l = 1;
+    System.out.println(i==l); //true
+ 5) java唯一的一个条件运算符(三元运算符) ：
+    isBoy = true;
+	sex = isBoy ? 'm':'f' ;
+
+7. 分支流程控制
+ 1) if ... else
+   语法: if(布尔表达式){
+          //语句块..
+        }else{
+          //语句块
+        }
+   嵌套: if(布尔表达式){
+          //...
+        }else if(布尔表达式){
+          //...
+        }else if(布尔表达式){
+          //...
+        }else{
+          //...
+        }
+
+ 2) switch ... case   p59-63
+   语法: switch: 开关, case: 情况下
+     switch(整数表达式){
+       case 整数常量1:
+         //语句序列
+         break;
+       case 整数常量2:
+         //语句序列
+         break;
+       default:
+         //语句序列
+     }
+  A. switch条件: 只能是整数(int byte char short)表达式
+     switch 不能处理long 或其他类型
+  B. case 只能是整数(int byte char short)常量, 不能使用
+     变量及表达式. 如: '中'
+  C. break 跳转到switch结束继续执行, 可以根据业务逻辑是否使用
+    经常都写break
+
+   练习：p61-63 例3-4,  3-5,  3.2.4 案例分析：划分成绩等级
+
+7. 循环控制
+ 1) While 循环控制
+  语法:
+  while(布尔表达式){
+    //循环体 语句序列
+  }
+
+注意：equals 与  ==
+
+练习：p69-71    例3-9 3-10  break      例3-11 continue     例3-12  return
+
+
+basic.day03:ArrayDemo,ExpandArrayDemo,SortDemo,SortAPIDemo,CharCounterDemo   学生练习，完成实验2
+1.注意复习演示：新建一个project, package, class
+
+2.打包src或者workspace文件夹，即可带走自己的源程序
+
+3.Java Array 数组：  数组变量, 数组对象, 数组元素
+  String[] authors = {"Tom", "Jerry", "Andy"};
+
+ArrayDemo.java
+1) 数组变量的声明
+   int[] ary; 声明了数组变量 ary, 数组变量是代词,
+   int ary[]; 为了与C语法兼容的写法, 不建议写法,
+
+ 2) 数组对象动态初始化
+   ary = new int[4]; //数组变量引用了具体数组对象, 就是代词
+   指代了具体事务.
+   数组元素是自动初始化的, 自动初始化为"零"值.
+  "零"值: 0, 0.0, \u0000, false, null
+   ary = new int[]{1,2,3}; 直接给出元素的初始化
+ 3) 数组对象的静态初始化, 只能用在声明数组变量时候同时初始化
+    * 不能用于赋值语句
+   int[] ary = {1,2,3};
+   ary = {3,4,5,6};//编译错误
+
+  Java关键字: if, public, class, else, while
+  特殊关键字: goto, const
+  java中 true, false, null 不是关键字, 是字面量!
+
+ 4) 数组变量, 数组对象, 数组元素
+   如: int[] ary = {1,2,3};
+     ary 是 数组变量 指代一个具体的数组, 同一个变量指代不同的数组
+     {1,2,3} 数组对象
+     1,2,3 是数组元素
+
+ 5) 数组元素的访问, 数组对象的大小是固定的,长度是n,下标: 0~n-1
+  A 使用[下标] 访问数组元素
+  B 越界访问(小于0/大于等于n), 都会发生运行异常
+  C 使用.length 属性可以获取数组对象长度
+
+ExpandArrayDemo.java
+4. 数组的复制与动态扩展
+ 1) 数组对象的复制
+
+ 2) 数组的扩展问题
+  1- Java数组对象的大小是固定的, 数组对象是不能扩展的
+  2- 利用数组复制的方法可以变通的实现数组扩展
+  3- System.arraycopy() 可以复制数组
+  4- Arrays.copyOf() 可以简便的创建数组副本
+  5- 创建数组副本的同时，将数组长度增加，变通地实现数组的扩展
+  6- 数组的迭代: 将每个数组元素重复的处理一遍.
+ 	for(int i=0; i<ary1.length; i++){
+      System.out.print(ary1[i] + " ");
+
+SortDemo.jav,SortAPIDemo.java
+5.java 系统排序 Arrays.sort()算法性能很好。在实际工程项目中直接用。练习使用for循环和数组，进行冒泡排序、选择排序、插入排序等，有些面试题中会出现。
+
+
+6.字符数组与String，后面学习String时候还有练习。
+  练习：CharCounterDemo.java

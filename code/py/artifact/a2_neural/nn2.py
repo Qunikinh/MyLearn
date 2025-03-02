@@ -52,10 +52,7 @@ train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=1, shuffle=True)
 test_loader = DataLoader(test_dataset, batch_size=1, shuffle=True)
 
-print("数据加载完成")
-print(f"训练集大小：{len(train_dataset)}")
-print(f"验证集大小：{len(val_dataset)}")
-print(f"测试集大小：{len(test_dataset)}")
+print("数据加载完成"f"    训练集大小：{len(train_dataset)}"f"验证集大小：{len(val_dataset)}"f"测试集大小：{len(test_dataset)}")
 
 # 推理函数，计算均方误差损失
 def infer(model, data_loader, device):

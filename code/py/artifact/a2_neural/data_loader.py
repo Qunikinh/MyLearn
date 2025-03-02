@@ -35,7 +35,6 @@ class xy(Dataset):#制作dataset函数的子类，用于制作nn.py的数据处�
         return self.data_len
 
     def __getitem__(self, index):
-        #将数据转换为列表
         self.data = list(self.data)
         self.label = list(self.label)
         
