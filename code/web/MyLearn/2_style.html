@@ -20,6 +20,15 @@
         /* 
             *{}  所有元素
         */
+        body {
+            text-align: center;
+            /* 文本居中 */
+        }
+
+        a {
+            text-decoration-line: none;
+            /* 去掉下划线 */
+        }
     </style>
 </head>
 
@@ -28,15 +37,41 @@
     <p><u style="color: red;">这是内联样式</u></p>
     <p><i>这是内部样式</i></p>
     <p><u>这是外部样式</u></p>
-    <q>内联>内部>外部</q>
-    <hr>
 
+    <hr>
     <h2>下面是选择器</h2>
+    <h4>***********基础选择器************</h4>
     <p><u>这是标签选择</u></p>
     <p id="test">这是id选择</p>
-    <p class="c1 c2">这是类选择c1 c2</p>
-    <p class="c1 c3">这是类选择c1 c3</p>
+    <p class="c2">这是类选择</p>
+    <h4>***********复杂选择器************</h4>
+    1
+    <p class="c1 c3">这是多类选择</p>
+    2
+    <div>
+        <p class="c4">这是</p>
+        <q>群组</q>
+        <p id="red">选择</p>
+    </div>
+    3
+    <div id="wrap">
+        <h3>这是<span>后代选择</span></h3>
+    </div>
+    4
+    <div>
+        <a href="">这是</a>
+        <a href="">伪</a>
+        <a href="">类选择</a>
+    </div>
+    5
+    <div>
+        <p class="c5">这是伪元素选择</p>
+    </div>
+
     <hr>
+    <p>内联>内部>外部>默认</p>
+    <p>继承父元素，按最近原则，后来者居上</p>
+    <p>!important优先级最高声明</p>
 
 
 </body>

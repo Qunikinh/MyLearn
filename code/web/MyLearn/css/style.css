@@ -1,19 +1,57 @@
-
-u{
+u {
     color: blueviolet;
 }
 
-#test{
+#test {
     font-size: 20px;
 }
 
-.c1{
+.c1 {
     background-color: antiquewhite;
 }
 
-.c2{
+/* todo以下是复杂选择器的示例： */
+.c2 {
     color: yellowgreen;
 }
-.c3{
+
+.c3 {
     color: violet;
+}
+
+/* 多类选择器 */
+.c4,
+#red,
+q {
+    color: red;
+    /* 群组选择器 */
+}
+
+#wrap h3 span {
+    font-size: 14px;
+    /* 后代选择器 */
+}
+
+a:first-child {
+    color: red;
+}
+
+a:last-child {
+    color: blue;
+}
+
+a:hover {
+    color: green;
+}
+
+/* 伪类选择器 */
+
+.c5::before {
+    content: '<<';
+    color: red;
+}
+
+.c5::after {
+    content: '>>';
+    color: blue;
 }
