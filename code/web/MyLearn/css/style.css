@@ -55,3 +55,12 @@ a:hover {
     content: '>>';
     color: blue;
 }
+
+/* 伪元素选择器 */
+
+h6::before,
+h6::after {
+    content: url(/MyLearn/img/2.svg);
+}
+
+/* 伪元素选择器(图片) */
