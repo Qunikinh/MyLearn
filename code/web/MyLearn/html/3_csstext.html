@@ -13,17 +13,58 @@
         #text1 {
             color: blue;
             background-color: antiquewhite;
-            font-family: kaiti;
-            font-size: 30px;
+            /* 颜色:
+            #颜色代码(使用取色器提取)
+            rgba(混合色,透明度)*/
+            font-family: kaiti,heiti;
+            /* 字体 无效时调用下一个*/
+            font-size: 200%;
+            /* 大小:
+            固定值:px(像素),em(父级),rem(html字体)
+            百分比:%(父级)
+            inherit(父级) */
             font-style: italic;
+            /* 倾斜 */
             font-weight: bolder;
+            /* 粗细:
+            normal(400),bold(700),bolder
+            100-900
+            inherit(父级)
+             */
+            text-decoration: underline overline rebeccapurple wavy;
+            /* 修饰:
+            overline(上划线),underline(下划线),line-through(删除线),blink(闪烁) 
+            color
+            wavy,soild,double,dotted,dashed,double-dotted,double-dashed*/
+            text-shadow: 5px 5px 5px red;
+            /* 阴影: x,y,模糊度,颜色 */            
         }
 
         #text2 {
-            line-height: normal;
-            text-decoration: overline;
-            text-indent: 60;
-            text-align: center;
+            text-indent: 5%;
+            /* 缩进:[length][%]*/ 
+            letter-spacing: 5px;
+            /* 字间距 */
+            word-wrap: break-word;
+            /* 自动换行(English) */
+            text-transform: uppercase;
+            /* 转换: uppercase(大写),lowercase(小写),capitalize(首字母大写) */            
+            text-align: justify;
+            /* 水平对齐: 
+            left,right,center,justify(两端对齐) */
+            line-height: 100%;
+            /* 行间距 */ 
+            width: 600px;
+            height: 120px;
+            border: 1px solid black;
+        }
+        #text3 {
+            text-overflow: ellipsis;
+            /* 文本溢出:clip(裁剪),ellipsis(省略号) */
+            overflow: hidden;
+            /* 溢出:visible(可见),hidden(隐藏),scroll(滚动条),auto(自动) */
+            white-space: nowrap;
+            /* 空白处理:nowrap(不换行),pre(保留空白),pre-wrap(保留空白并换行),pre-line(保留换行并忽略空白) */
         }
     </style>
 </head>
@@ -32,14 +73,32 @@
     <h1>css字体样式</h1>
     <img src="/MyLearn/img/3.1.png" alt="图片加载失败">
     <p id="text1">字体样式：蓝色大号楷体倾斜加粗字</p>
-    <p>
-        color: blue;<q>字体颜色</q><br>
-        background-color: antiquewhite;<q>背景颜色</q><br>
-        font-family: kaiti;
-        font-size: 30px;
-        font-style: italic;
-        font-weight: bolder;
-    </p>
+    <div><p>
+        color: blue;<br>
+        background-color: antiquewhite;<br>
+        <q>颜色:</q><br>
+        #颜色代码(使用取色器提取)<br>
+        rgba(混合色,透明度) <br><br>
+        font-family: kaiti,heiti;<br>
+        <q>字体 </q>无效时调用下一个<br><br>
+        font-size: 200%;<br>
+        <q>大小:</q><br>
+        固定值:px(像素),em(父级),rem(html字体) <br>
+        百分比:%(父级) <br>
+        inherit(父级) <br><br>
+        font-weight: bolder;<br>
+        <q>粗细:</q><br>
+        normal(400),bold(700),bolder<br>
+        100-900<br>
+        inherit(父级)<br><br>
+        font-style: italic;<br>
+        <q>倾斜</q><br><br>
+        text-decoration: blink;<br>
+        <q>修饰</q><br>
+        [overline(上划线),underline(下划线),line-through(删除线),blink(闪烁)] [color] [style]<br><br>
+        <q>复合属性</q>font: [font-style] [font-weight] font-size/line-height font-family;<br>
+    </p></div>
+    
 
     <h1>css文本样式</h1>
     <img src="/MyLearn/img/3.2.png" alt="图片加载失败">
@@ -49,6 +108,37 @@
         科创板：沪市要面向具有核心技术、符合国家战略新兴产业的企业（688 开头）
         北交所：主要服务创新型中小企业（8开头）
         新三板：全国中小企业股份转让系统，（通常以 400、430、830 开头）</p>
-</body>
+    <p id="text3">寒冬悄然离去，春日的暖阳洒满校园。在这生机盎然的季节里，我们迎来了一年一度的公寓文化节。以“扭棒交织奥运魂，方寸巧纳天籁音”为主题的第五届公寓文化节，不仅是一场视觉与听觉的盛宴，更是宿舍文化展示和同学情谊深化的重要舞台。通过创意手工等形式，激发同学们对艺术的热爱和追求，同时以奥林匹克精神为引领，鼓励大家在学习生活中展现坚韧不拔的意志和团结协作的精神。此次活动旨在促进室友之间的友好交流与合作，营造积极向上、和谐美好的校园生活氛围，让每一位参与者都能在活动中感受到家的温暖和青春的力量。</p>
+    <div>
+        <p>text-align: center;<br>
+            <q>对齐</q><br>
+            left(左),right(右),center(居中),justify(两端对齐) <br><br>
+            text-indent: 2em;<br>
+            <q>首行缩进</q><br>
+            em(父级),rem(html字体),px(像素),百分比(父级) <br><br>
+            letter-spacing: 2px;<br>
+            <q>字符间距</q><br>
+            em(父级),rem(html字体),px(像素),百分比(父级) <br><br>
+            word-spacing: 2px;<br>
+            <q>单词间距</q><br>
+            em(父级),rem(html字体),px(像素),百分比(父级) <br><br>
+            line-height: 2em;<br>
+            <q>行高</q><br>
+            em(父级),rem(html字体),px(像素),百分比(父级) <br><br>
+            text-transform: uppercase;<br>
+            <q>大小写转换</q><br>
+            capitalize(首字母大写),uppercase(全部大写),lowercase(全部小写) <br><br>
+            text-shadow: 2px 2px 2px red;<br>
+            <q>阴影</q><br>
+            h-shadow(水平阴影),v-shadow(垂直阴影),blur(模糊距离),color(阴影颜色) <br><br>
+            white-space: nowrap;<br>
+            <q>空白处理</q><br>
+            normal(默认),nowrap(不换行),pre(保留空白和换行),pre-wrap(保留空白和换行，自动换行),pre-line(合并空白和换行，自动换行)<br><br>
+            text-overflow: ellipsis;<br>
+            <q>溢出处理</q><br>
+            clip(裁剪),ellipsis(省略号)
+    </div>
 
+
+</body>
 </html>

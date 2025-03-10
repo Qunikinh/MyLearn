@@ -1,5 +1,6 @@
 {
     "editor.colorDecorators": true,
     "editor.bracketPairColorization.enabled": true,
-    "editor.defaultColorDecorators": "auto"
+    "editor.defaultColorDecorators": "auto",
+    "Codegeex.RepoIndex": true
 }

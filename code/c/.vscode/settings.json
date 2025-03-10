@@ -2,6 +2,8 @@
     "files.associations": {
         "bitset": "c",
         "chrono": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "first.C": "cpp",
+        "tset.C": "cpp"
     }
 }
