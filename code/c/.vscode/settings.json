@@ -4,6 +4,19 @@
         "chrono": "c",
         "algorithm": "c",
         "first.C": "cpp",
-        "tset.C": "cpp"
-    }
+        "tset.C": "cpp",
+        "a_first.C": "cpp",
+        "a_lianbiao.C": "cpp",
+        "basic_lianbiao.C": "cpp",
+        "b_1.C": "cpp",
+        "b_5.C": "cpp",
+        "a_6.C": "cpp",
+        "a_5.C": "cpp",
+        "a_1.C": "cpp",
+        "a_7.C": "cpp",
+        "a_8.C": "cpp",
+        "a_4.C": "cpp"
+    },
+    "Codegeex.GenerationPreference": "line by line",
+    "Codegeex.CompletionDelay": 3
 }

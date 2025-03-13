@@ -1,0 +1,592 @@
+讲课顺序：
+day01:Book，BookDemo，Point，PointDemo，day01.CostructorDemo
+day02:extcarqq,abs,intf,day01.CostructorDemo,day02.ConstructorDemo
+day03-1:oop.day03:access,static,final 
+day04:ParamaterDemo 值传递
+day05-1:getset.PersonStudentDemo,应用get()set()必要性,不要写Person.age,而是按规范写getAge()；改写oop.day01.Book,应用private及public get()set();“17 javaBean”,POLO，“18 关于JavaBean规范”
+day05-2:day05.PersonEqualsDemo,应用private及public get()set()；覆盖toString(),hashcode(),equals()；ObjectDemo-toString(),inn, EqualsDemo-hashcode、equals,OID
+day05-3:学生对应练习：day05.Poin,day05.poinDemo，应用private及public get()set()；toString(),hashcode(),equals()
+	
+day06：    学生练习dday06.shapecr       
+
+学生完成实验3
+
+oop.day01:Book，BookDemo，Point，PointDemo，day01.CostructorDemo
+
+OO:面向对象思想 https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3
+	
+	从世界观的角度：面向对象(Object Oriented,OO)的基本哲学认为，世界是由各种各样具有自己的运动规律和内部状态的对象所组成的；不同对象之间的相互作用和通讯构成了完整的现实世界。因此，
+    人们应当按照现实世界这个本来面貌来理解世界，直接通过对象及其相互关系来反映世界。这样建立起来的系统，才能符合现实世界的本来面目。
+	
+	从方法学的角度：面向对象的方法是面向对象的世界观在开发方法中的直接运用。它强调，系统的结构应该直接与现实世界的结构相对应，应该围绕现实世界中的对象来构造系统，而不是围绕
+    功能来构造系统。
+
+        从现实世界中客观存在的事物（即对象）出发来构造软件系统，并在系统构造中尽可能运用人类的自然思维方式，强调直接以问题域（现实世界）中的事物为中心来思考问题，认识问题，
+    并根据这些事物的本质特点，把它们抽象地表示为系统中的对象，作为系统的基本构成单位（而不是用一些与现实世界中的事物相关比较远，并且没有对应关系的其它概念来构造系统）。这
+    可以使系统直接地映射问题域，保持问题域中事物及其相互关系的本来面貌。
+
+        面向对象的程序设计语言必须有描述对象及其相互之间关系的语言成分，这些程序设计语言可以归纳为以下几类：系统中一切事物皆为对象；对象是属性及其操作的封装体；对象可按其
+    性质划分为类，对象是类的实例；实例关系和继承关系是对象之间的静态关系；消息传递是对象之间动态联系的唯一形式，也是计算的唯一形式；方法是消息的序列。
+	
+1 面向对象(OO) 
+ 1) 什么是Object(对象), Object 本意:东西,具体事物实例
+ 2) 面向对象, 面向客观事物之间的关系.
+ 3) OOA面向对象分析/OOD 面向对象设计   
+ 4) 面向对象概念：
+  A 类型: 名词概念, 如: 客人, 菜品, 厨师,student,school 
+  B 对象(东西Object): 具体概念的个体实例,如:student1,student2 一辆QQ车
+  C 引用(变量): 引用具体概念实例的代词, 如: 某人, QQ车  
+  D 行为(方法) 
+ 
+  E 封装P102: 将数据和对数据的操作组合起来构成类，类是一个不可分割的独立单位。
+  	类中既要提供与外部联系的接口，又要尽可能隐藏类的实现细节。
+  	类的设计者，要考虑如何定义类中成员变量和方法，如何设置其访问权限。
+  	类的使用者，只需要知道哪些类可以选择，每个类有哪些功能，每个类中有哪些可以访问的成员变量和成员方法。  
+  	任何对象实例都是尽可能封装, 减少暴露。
+  F 继承P117 从已有类创建新类。先创建一个具有共性的一般类，从一般类派生出具有具体特殊性的新类，新类继承一般类的属性和方法，并根据需要增加自己的新的属性和方法。
+	概念的继承关系。
+	继承实现了软件的可重用性和可扩展性。
+  G 多态:p127-129： 行为/引用, 在具体情形下发生了变化的现象。	
+    (1)方法重载，静态多态，编译时多态,比如Point.distance(),distance(int x, int y),distance(Point other)
+    (2)方法重写覆盖，动态多态，运行时多态,比如Car.run()，Benz.()，QQ.run()
+
+2 Java 类 型, 引用变量 与 堆对象
+ 1)Java 类, 是用来描述事物类型的. 如: “图书馆管理系统”中的概念: 书 Book
+  	书的特征: 书号, 书名, 编号, 作者, 价格...  
+ 2) 类的声明:
+    public class Book{
+    	long id;
+    	String name;
+    	String isbn; //书号
+    	String[] authors; //作者
+    	double price;
+    }
+ 3) 引用变量与对象的创建过程:
+  A Java的内存管理与分配:
+           栈是一块Java使用内存区域, LIFO,先进后出
+           堆也是一块Java使用内存区域, 使用方式:无序分配, 随机分配
+  B 局部变量 与 堆对象空间分配
+    Java 局部变量(方法参数)在栈中分配, 是按照变量的类型分配.  对象在堆中分配, 按照类的属性(实例变量)分配空间
+  C 变量类型与分配
+         变量分为: 基本类型和引用类型
+         基本类型变量的空间大小: 就是基本类型的空间大小, 值是基本类型的值
+         引用变量的值是一个对象的地址值, 引用变量通过地址引用了一个堆对象。引用类型变量的占用空间大小和值管理是透明的，即不可见的，由Java系统管理     
+
+  E 对象的属性默认自动初始化， 自动初始化为"零"值, 0, 0l, 0.0, '\u0000', false,引用类型的初始化值为null
+  F 在null引用上调用属性或方法, 会发生运行时异常:NullPointerException
+
+  G 对象实例化过程: new运算, 创建对象实例:
+    (1)根据类的属性在堆中分配对象空间,并且自动初始化实例变量(属性);
+    (2)根据参数类型调用构造器;
+    (3) new运算返回对象的引用地址(这个地址就是引用)。
+ 
+
+3 Java中的构造器: 
+  1)声明在类内部, 方法名与类名一致; 构造方法不能声明返回值类型; 构造方法可以包含参数, 参数一般是创建对象实例 必须依赖的前提条件。
+	public class Point {
+	  int x;
+	  int y;
+	  /** 构造器 */
+	  public Point(int x, int y){
+	    this.x = x;
+	    this.y = y;
+	  }
+	}
+ 2) 默认构造器:
+    A java 类一定有构造器；
+    B 如果类没有声明任何构造器,Javac自动提供一个 默认无参构造器；
+    C 如果声明了构造器声明, Javac将不再提供默认构造器;
+     
+ 3) 构造方法重载: 参数不一样的构造器
+	案例: Point.java
+   	
+    方法签名 = 方法名+参数类型列表
+   	
+    方法重载:方法名一样，方法参数不一样。方法参数不一样包括三方面：参数个数、参数类型、参数顺序。
+
+  oop.day01中，关于认构造器小结：7句话
+    A java 类一定有构造器；
+    B 如果类没有声明任何构造器,Javac自动提供一个 默认无参构造器；
+    C 如果声明了构造器, Javac不再提供默认构造器;
+    D 建议：所有的类都提供无参数构造器，方便子类继承；
+    E 构造器可以重载，程序员根据自己项目的业务需要可以写多个重载的构造器；
+    F 构造器是用来初始化的；
+    G 构造器没有返回值，也没有void。
+  
+ 4)this 关键字： 
+ 	this 是对当前对象的引用, 是运行期间当前对象本身；
+    	this 是在运行期间, 作为方法的第一个隐含参数, 是局部变量；
+ 	可以使用this访问当前对象的属性或者方法； 
+  	this() 是调用本类的其他构造器, 实现了构造器的重用,简化代码； 
+    	this() 必须写在构造器的第一行。 
+     
+4 对象的方法
+ 1) 方法是对象的功能, 依赖于对象存在， 如: p1.distance()。  方法是功能, 动作，行为,一般用动词声明;  
+ 2) 方法常常重载， 参数不一样的重载是功能行为的多态，方法根据参数不同执行不同的过程；
+ 3）重载的方法经常互相重用.
+   
+
+5 动态绑定: 引用变量和对象之间是动态绑定的, 是指在运行期间才能 确定具体对象是那个，如: this是引用变量, 相当于代词, 在运行
+   期间动态绑定到当前对象。
+
+
+
+oop.day02:extcarqq,abs,intf,day01.CostructorDemo,day02.ConstructorDemo
+导入：（1）成员变量局与局部变量   再讲QQ.class中，type = "A"
+      （2）“方法跟着对象走“：
+  	 Car car = qq;   //向上转型：子类转型成父类。能说"QQ是Car"、"麻雀是鸟”
+	 car.run();
+	 car.stop();”
+
+6 关于类:
+  一个Java源文件只能有一个public class
+  文件名与公有类类名一致
+  源文件中可以有多个类, 但是不能都是公有的
+  如果没有公有类, 文件名与某个类类名一致
+  
+  一般情况下，一个源文件一个类, 类是公有的。
+  类体(class body)中的成员:
+    属性
+    方法
+    构造器
+    语句块(以后讲, 很少用) 
+    成员不能重复
+    属性名不能重复
+    方法签名不能重复
+    构造器签名不能重复
+
+7 类的继承，用来表达概念上具体化延续的具体概念： 1)属性     方法       2) 构造器      方法覆盖    
+  A 继承体现了自然逻辑系统中的分类关系
+  B 父类型声明所有子类的公共特征(公共属性)和行为(公共方法)
+  C 子类可以继承父类型的可以继承的属性和方法. 
+  D 继承可以实现代码的复用(重用), 子类可以不用再定义一遍
+  E 子类可以声明特有的属性和方法, 称: 特化，具体化, 特殊化
+  F 子类可以覆盖(重写)父类型的功能, 实现多态行为
+ 
+8 oop.day02关于继承中的构造器：
+  1)构造器不能继承
+  2)子类构造器中, 一定会调用父类构造器。默认调用父类无参数构造器，也使用super()调用父类构造器。
+  3）super()必须写在子类构造器第一行。 
+  
+9 关于对象的实例化过程：
+  1) 按需加载类(Koo.class) 以及所有的父类型, 只加载一次!
+  2) 递归调用所有父类构造器(从最高的父类执行 A-B-C)。实例化子类，会递归分配所有父类的空间。
+       父类中:
+       A 分配父类属性空间, 自动初始化为默认值
+       B 执行属性初始化赋值
+       C 执行父类构造器过程
+       子类中:
+       D 分配子类属性空间, 自动初始化为默认值
+       E 执行子类属性初始化赋值
+       F 执行子类构造器过程
+  3) 最后创建的对象，即子类实例, 包含所有父类型声明的属性空间  
+  4)super 关键字: 
+    A super() 在构造器的第一行, 调用父类构造器, 默认自动添加 
+    B super在子类中代表父类型对象的引用, 用来访问父类型的属性/方法
+  5)this 关键字:
+    A this() 在构造器的第一行, 调用本类的构造器, 有this()就不再默认自动添加super()
+    B this 代表当前对象的引用, 用来访问当前对象的属性和方法。 如果能够区别局部变量和属性(实例变量), 可以省略this。  
+
+10 所有类默认继承于Object
+  
+11 继承中的语法：
+ 1) 父类型变量可以引用子类型的实例，父类型的实现是多态的；
+ 2) 子类可以覆盖父类的方法，修改父类的行为；
+         方法覆盖：子类覆盖了父类“相同方法签名”的方法。
+         方法的覆盖是由方法动态绑定实现的，是Java虚拟机运行时候确定执行那个对象哪个方法，java最终执行子类的方法。
+ 3)子类在覆盖父类的方法时，可以扩大访问权限控制，比如， 父类private的方法，子类覆盖时可以扩展为public的。方法签名不包括访问权限控制修饰符
+  
+ 
+12 引用类型转换，即引用变量的类型的转换
+  1) 向上转型（隐式/自动类型转换），是小类型到大类型的转换
+    如：
+    Circle c = new Circle(1,2,3);
+    Shape s = (Shape) c;//表示圆一定是图形
+ 
+  2)向下转型（强制类型转换），是大类型到小类型。
+    如：
+    Shape s = (Shape) new Circle(1,2,3);
+    Cirlcle c = (Circle)s;  //当s实际引用圆时候，能够转换成功
+    s = new Rectangle(1,1,2,2);
+    Circle c2 = (Circle) s;//出现类型转换异常，因为s引用的是Rectangle，不是圆实例。
+ 
+ 3) instanceof 运算符，判断是否是该引用对象的类型。经常与“引用类型强制转换”配合，实现安全的类型转换，避免类型转换异常。  
+ 
+13.abstract class 抽象类,即不具体的类，包含抽象方法的类
+ 1) 抽象方法，只有行为的概念，没有具体的行为实现。 使用abstract 修饰，没有方法体。
+ 2) 抽象类:包含抽象方法的类，使用 abstract 修饰。
+ 3) 抽象类不能直接创建实例，可以定义引用变量。
+ 4) 抽象类只能被继承，一个具体类继承一个抽象类，必须实现所有抽象方法。  
+ 5) 抽象方法和抽象类，接口，适合用于系统的分析和设计
+
+14.interface 接口, 相当于纯抽象类(c++纯虚类)。用来表示纯抽象概念，没有任何具体的方法和属性。
+  1) 接口：全部方法都是抽象方法，全部属性都是常量。   
+  2) 接口 不能实例化，可以定义变量。
+  3) 接口变量可以引用具体实现类的实例。
+  4) 接口只能被实现(继承)，一个具体类实现接口，必须实现全部的抽象方法。
+  5) 接口之间可以继承。
+  6) 一个具体类可以实现多个接口，实现多继承现象。
+  7) 接口中的属性，默认是常量 public static final 
+  8) 接中的方法一定是:public abstract 
+  9) 实现一个接口，使用关键字implements, 实现实际上是一种继承关系。接口和实现类是父与子
+
+
+15 oop.day02:讲完extends,Abstract,implements,之后，建议做的书上的三个题：p120例6-4, s P125：案例分析：改进的银行帐户管理程序    
+
+
+
+oop.day03:access,static,final
+16 （教材P103表）访问控制修饰符
+ 1 public 
+ 2 protected
+ 3 [default] 很少使用，很即少使用package作为访问控制的边界
+ 4 private 
+ 
+   1)类可以使用public和默认defualt修饰，不建议使用非公有类，就是说所有类都应该是公有的，并且 一个源文件一个类。一个源文件可以有多个类, 但是只能有一个public类, 文件名要与Public类一致。如果有其他类, 就只能是默认修饰
+   2)属性和方法可以使用4个修饰public、protected、[default] 、private作为访问控制控制修饰符。
+   3）尽可能private属性、public方法。
+   4）[default] 很少使用，即很少使用package作为访问控制的边界，那么本质上，Protected就是保护给自己的子类可见。
+   5）声明属性尽可能私有，这样才能做到尽可能的封装。 同时，提供适当的（比如public的）属性访问方法，适当的开放属性的访问。 
+   6)继承中，子类在覆盖父类的方法时，可以扩大访问权限控制。
+
+17 static
+  P87  静态 关键字, 修饰: 属性, 方法, 内部类, 代码块
+  static修饰的资源属于类级别, 是全体对象实例共享的资源，包括静态属性、 方法、 内部类、静态代码块：
+  1) 静态属性：static修饰的属性，在类的加载期间初始化，是属于类的，是所有类的实例共享的变量, 使用类名访问静态属性。
+             实例变量：属于具体对象的属性.
+  2) static 方法, 使用static声明的方法, 属于类的方法, 一般用来表示工具方法. 在类加载之后不需要创建任何类的实例就可以直接调用，用类名调用。静态方法只能访问静态资源(属性/方法)，静态方法中不能有this。
+  3) 静态代码块，是在类加载期间运行的代码块，由于类只加载一次，所以静态代码块只执行一次。不很常见，一般用于在类加载之后初始化一些静态资源，如：加载配置文件。 
+  4) 静态内部类（在内部类专题讲解）
+
+18 final   
+最终的 P113
+   1) final 修饰的类，不能再被继承。String，Math类， Integer、Long、...包装类，都是final类，不能被继承。
+      在实际项目开发中，一般不让class是final的, 一般class都是public的。 
+   2) final修饰的方法，不能再被覆盖。在实际项目开发中，原则上不允许使用final方法。 
+     Spring, Hibernate,Struts2, 这些框架经常动态继承代理项目开发中自己写的类，如果使用final的类则可能造成这些框架不能工作。 
+   3) final修饰的变量，初始化以后不允许再修改了。包括：A final的成员变量  B final的局部变量,包括 final的方法参数
+   4) final static  常量（p33 例2-6，2-7）：Java使用final static修饰的变量作为常量。要求常量名全都大写字母。
+      
+   常量 和 字面量/直接量，比如：  
+       public  final static int ACE = 13;
+       Math.PI
+   常量和字面量都是不可改变的常数, 广义上都称为"常量" 
+   建议：编程中一般不直接使用“字面量”，“硬编码”，尽量将字面量替换为常量/变量。比如：
+  
+  	 public static final int ZERO=0;
+  
+ 	 	for(int i=0; i<54; i++){
+  		}
+ 		for(int i=ZERO; i<cards.length; i++){
+ 		}  
+ 
+   5)匿名内部类使用的局部变量和参数需要final修饰 http://blog.sina.com.cn/s/blog_a11783b101012yvi.html
+
+
+
+oop.day04:ParamaterDemo
+19 java方法参数的传递规则: 基于值的传递, 是变量值的复制, 
+  1) 基本类型就是其中值的复制, 
+  2) 引用类型是引用值(地址)的复制, 对象不复制! ParamaterDemo.java
+
+day05-1:getset.PersonStudentDemo,应用get()set()必要性,不要写Person.age；改写oop.day01.Book,应用private及public get()set();“17”,POLO，“18 关于JavaBean规范”
+day05-2:day05.PersonEqualsDemo,应用private及public get()set()；toString(),hashcode(),equals()；ObjectDemo-toString(),inn, EqualsDemo-hashcode、equals,OID
+day05-3:学生对应练习：day05.Poin,day05.poinDemo，应用private及public get()set()；toString(),hashcode(),equals()
+
+
+
+
+oop.day05:JavaBean，POLO，get()set()；toString(),hashcode(),equals()
+20 javaBean
+day05-1:day05.getset.PersonStudentDemo,应用get()set()必要性,不要写Person.age,而是按规范写getAge()；" 属性是静态绑定到变量类型   方法是动态绑定, 由最终对象的方法决定"；
+        改写oop.day01.Book,应用private及public get()set()；
+       “17 javaBean”,POLO，“18 关于JavaBean规范”
+day05-2:day05.PersonEqualsDemo,应用private及public get()set()；覆盖toString(),hashcode(),equals()；ObjectDemo-toString(),inn, EqualsDemo-hashcode、equals,OID
+day05-3:学生对应练习：day05.Poin,day05.poinDemo，应用private及public get()set()；toString(),hashcode(),equals()
+        学生对应练习：实验3第 4 题：School,Student,Demo(oop.day05.getset中的也有，不讲，作为学生实验练习题）
+
+21 关于JavaBean规范
+  1) JavaBean 不是语法规范，是习惯性编程规范，按照该规范写的类使用方便。Java bean 类：POJO，Plain Old Java Object  
+  2) 简化规范：
+    A 必须有包;
+    B Java类具有无参数构造器;
+    C 属性尽可能是private的，然后用public的方法 setXxx()和 getXxx() 作为对外的接口;
+    D 建议覆盖toString()、hashcode()、equals();	
+    D 必须实现序列化接口;
+    E JDK提供的类几乎都符合JavaBean规范，如：String  
+
+22 小结：Java三大特征：封装、继承、多态，类
+    封装体现在：（1）属性尽可能私有private，就是尽可能的封装。   
+		（2）编程中,尽可能封装,尽可能缩小资源的访问范围,即:优先考虑使用private,其次考虑使用protected, 最后考虑使用public
+		（3）一个方法，实际上，就是对一个功能模块的封装  
+		（4）一个类，比如，Point，就是一个封装，属性是数据，方法是对数据的操作，“把一些具有相同特别特征（属性）和相同行为动作（方法）的一些对象，归纳抽象定义为一个类”
+	            “类就是把相关的数据和对数据的处理封装在一起的一个程序”
+    多态：（1）重载的方法，是静态多态   （2）父类型变量可以引用子类型的实例，父类型的实现是多态的；在运行期间才能确定具体对象，才能确定究竟调用哪个对象的方法，这是动态多态。
+
+http://wenku.baidu.com/link?url=eyu_xsnK16JLuLUCiealcjmp8Le1Uqe5get-O4V_-RxpR3UpRL-V-d0gISJuf73U1yLuUWPO765-I431Gxdhx1xo5hyRhRhXBhjmB4JLqC_
+
+23 关于 Object：
+   println()默认调用p.toString()打印对象信息。
+   Object.toString() 返回:全限定名的hashCode()。
+   全限定名: package.classname.hashCode:是堆内存地址经过转换对应的整数,但不是内存地址。
+   很多Java API方法调用这个toString()作为对象的描述。
+   建议覆盖 toString()。
+
+  1) Java 所有类，默认继承于Object， 继承了Object 的属性和方法， 如: toString(),  hashCode(), equals() 
+  2) toString() 方法, 经常由系统默认调用, 是当前对象的文本描述。 Object默认返回: 全限定名@hashCode，建议覆盖为 ：当前对象的文本描述 ，
+             如:"id:"+id+",name:"+name，又如：(3,4)。
+  3) equals()方法，在Object类中声明，默认的比较规则是：比较引用，即比较两个对象的hashcode值，即比较两个对象引用是不是同一个对象。
+     建议覆盖equals():实现对象的比较，比较对象的状态，即比较对象的数据，“内容”。
+             
+    注意： 引用相等 与 对象相等的区别： 引用值相等，使用 “==”; 对象的数据相等，使用equals()方法  
+    
+    覆盖规则：
+    A 自反性：对于任何非空引用值 x，x.equals(x) 都应返回 true;
+    B 对称性：对于任何非空引用值 x 和 y，当且仅当 y.equals(x) 返回 true 时，x.equals(y)才返回 true;
+    C 传递性：对于任何非空引用值 x、y 和 z，如果  x.equals(y) 返回 true，并且 y.equals(z) 返回 true，那么 x.equals(z) 应返回 true;
+    D 一致性：对于任何非空引用值 x 和 y，多次调用  x.equals(y) 始终返回 true 或始终返回 false，前提是对象上 equals 比较中所用的信息没有被修改。
+    E 对于任何非空引用值 x，x.equals(null) 都应返回false。
+
+ 4) hashCode()方法与equals方法一同覆盖：
+    A 当两个对象equals比较为true时候，这两个对象应该 具有相同的hashCode()值;
+    B 当两个对象equals比较为false时候，这两个对象应该具有尽可能不相同的hashCode()值;
+    C hashCode()值要稳定（一致性），一个对象创建以后就不应该再变化;
+    D 默认的hashCode() 值是当前堆对象地址转换的一个整数,这个整数不是内存地址；
+    E 一般使用对象的OID值作为hashCode的值。  OID，Object identifier，对象的唯一编号，在项目中一般采用数据库来生成OID，也就是数据库中的主键。
+
+ 5)比较大小
+    A Comparable 可以比较的， 用于类实现, 实现这个接口表示: 这个类的实例可以比较大小，可以进行自然排序.
+    B Comparable 的实现必须与equals() 的结果一致, 就是相等的对象比较结果一定 是0 
+    C Comparator 比较工具, 用于临时定义比较规则, 不是默认比较规则
+ 6）return，Java中可以用return结束方法以控制流程
+
+
+24 关于java的内存空间分配：http://bbs.csdn.net/topics/370001490
+之一： 三个区
+    堆区: 
+  	A 存储的全部是对象，每个对象都包含一个与之对应的class的信息。(class的目的是得到操作指令) 
+  	B jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身 
+   栈区: 
+	A 每个线程包含一个栈区(stack)，栈中只保存基本数据类型和自定义对象的引用(不是对象，对象都存放在堆区中 )
+	B 每个栈中的数据(原始类型和对象引用)都是私有的，其他栈不能访问。 
+	C 栈分为3个部分：基本类型变量区、执行环境上下文、操作指令区(存放操作指令)。 
+    方法区: 
+	A 又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的class和static变量。 
+	B 方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。 
+ 
+ 之二：java内存分成4块：
+ 	一块是堆,用来存放new的对象；
+ 	一个是栈,用来存放局部变量；
+ 	静态变量区,存放常量,静态变量；
+ 	代码区,存放代码.
+ 
+ 之三：p159字符串缓冲池，为堆空间
+       
+ 
+课外学习：
+   
+25  Java关键字null
+    http://lavasoft.blog.51cto.com/62575/79243/
+  1) null是代表不确定的对象：Java中，null是一个关键字，用来标识一个不确定的对象。 有时候，我们定义一个引用类型变量，在刚开始的时候，无法给出一个确定的值，可以先给变量指定一个null值，问题就解决了。
+  2) null本身不是对象，也不是Objcet的实例
+  3) java会默认给引用类型变量自动赋值为null。
+  4) 容器类型与null： 
+	List：允许重复元素，可以加入任意多个null
+	Set：不允许重复元素，最多可以加入一个null
+	Map：Map的key最多可以加入一个null，value没有限制
+	数组：基本类型数组，定义后，如果不给定初始值，则java运行时会自动给定值。引用类型数组，不给定初始值，则所有的元素值为null。
+  5) null的其他作用： 
+	A 判断一个引用类型数据是否null, ==
+	B 释放内存，让一个非null的引用类型变量指向null,这样这个对象就不再被任何对象应用了,等待JVM垃圾回收机制去回收。 
+
+ 
+26 java主函数public static void main(String args[])中static的作用：  
+ 	http://blog.sina.com.cn/s/blog_662263a10100poqw.html
+    	static关键字，告知编译器main函数是一个静态函数,main函数中的代码是存储在静态存储区的，即当定义了类以后这段代码就已经存在了。 如果main()方法没有使用static修饰符， 那么编译不会出错，但是你试图执行该程序将会报错，
+    提示main()方法不存在,因为包含main()的类并没有实例化,即没有这个类的对象，所以其main()方法也不会存在。而使用static修饰符则表示该方法是静态的，不需要实例化即可使用。
+	
+	http://bbs.csdn.net/topics/320080170 
+ 		用static修饰的方法，无须产生类的实例对象就可以调用该方法。而没有static修饰的方法，需要产生一个类的实例对象才可以调用该方法。
+	main方法必须要static来修饰，是因为main方法是Java解释器调用的，那时候还没有任何对象产生。
+
+27. 什么是OID：为了在系统中能够找到所需对象,我们需要为每一个对象分配一个唯一的表示号.在关系数据库中我们称之为关键字,而在对象术语中,则叫做对象标识(Object identifier-OID)。
+	通常OID在内部都使用一个或多个大整数表示,而在应用程序中则提供一个完整的类为其他类提供获取、操作。
+	Hibernate使用OID来建立内存中的对象和数据库中记录的对应关系。对象的OID和数据库的表的主键对应。为保证OID的唯一性，应该让Hibernate来为OID赋值。
+
+28.为什么要实现Serializable：重要的两个原因是：1、将对象的状态保存在存储媒体中以便可以在以后重新创建出完全相同的副本；2、按值将对象从一个应用程序域发送至另一个应用程序域。
+       实现serializable接口的作用是就是可以把对象存到字节流，然后可以恢复。所以你想如果你的对象没实现序列化怎么才能进行网络传输呢，要网络传输就得转为字节流，所以在分布式应用中，
+
+   你就得实现序列化，如果你不需要分布式应用，那就没那个必要实现序列化。
+ 
+29.myeclipse常用快捷键:
+ 	alt+shift+R 
+ 	...
+ 
+ 
+30:面向对象思想https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3
+	
+	从世界观的角度可以认为：面向对象(Object Oriented,OO)的基本哲学是认为世界是由各种各样具有自己的运动规律和内部状态的对象所组成的；不同对象之间的相互作用和通讯构成了完整的现实世界。因此，
+    人们应当按照现实世界这个本来面貌来理解世界，直接通过对象及其相互关系来反映世界。这样建立起来的系统才能符合现实世界的本来面目。
+	
+	从方法学的角度可以认为：面向对象的方法是面向对象的世界观在开发方法中的直接运用。它强调系统的结构应该直接与现实世界的结构相对应，应该围绕现实世界中的对象来构造系统，
+    而不是围绕功能来构造系统。
+
+        从现实世界中客观存在的事物（即对象）出发来构造软件系统，并在系统构造中尽可能运用人类的自然思维方式，强调直接以问题域（现实世界）中的事物为中心来思考问题，认识问题，
+    并根据这些事物的本质特点，把它们抽象地表示为系统中的对象，作为系统的基本构成单位（而不是用一些与现实世界中的事物相关比较远，并且没有对应关系的其它概念来构造系统）。这
+    可以使系统直接地映射问题域，保持问题域中事物及其相互关系的本来面貌。
+
+        面向对象的程序设计语言必须有描述对象及其相互之间关系的语言成分，这些程序设计语言可以归纳为以下几类：系统中一切事物皆为对象；对象是属性及其操作的封装体；对象可按其
+    性质划分为类，对象是类的实例；实例关系和继承关系是对象之间的静态关系；消息传递是对象之间动态联系的唯一形式，也是计算的唯一形式；方法是消息的序列。
+
+
+31 类什么时候加载, 类什么时候初始化 https://blog.csdn.net/geek_sun/article/details/83052637
+         理解类在JVM中什么时候被加载和初始化是Java编程语言中的基础概念，正因为有了Java语言规范(The Java Language Specification,JLS),我们才可以清晰的记录和解释这个问题，但是很多
+    Java程序员仍然不知道什么时候类被加载，什么时候类被初始化，类加载和初始化好像让人很困惑，对初学者难以理解，在这篇教程中我们将看看类加载什么时候发生，类和接口是如何被初始化的，
+    我并不会拘泥于类加载器的细节或者说类加载器的工作方式。仅仅使这篇文章更加专注和简结。
+
+
+    	类的加载是通过类加载器（Classloader）完成的，它既可以是饿汉式[eagerly load]（只要有其它类引用了它就加载）加载类，也可以是懒加载[lazy load]（等到类初始化发生的时候才加载）。不
+    过我相信这跟不同的JVM实现有关，然而他又是受JLS保证的（当有静态初始化需求的时候才被加载）。
+
+
+32 类什么时候初始化，精确地写在Java语言规范中：
+    加载完类后，类的初始化就会发生，意味着它会初始化所有类静态成员，以下情况一个类被初始化：
+
+   	 实例通过使用new()关键字创建或者使用class.forName()反射，但它有可能导致ClassNotFoundException。
+    	 类的静态方法被调用
+   	 类的静态域被赋值
+    	 静态域被访问，而且它不是常量
+   	 在顶层类中执行assert语句
+
+   反射同样可以使类初始化，比如java.lang.reflect包下面的某些方法，JLS严格的说明：一个类不会被任何除以上之外的原因初始化。
+
+33 类是如何被初始化的:
+	域（fields，静态的还是非静态的）、块（block静态的还是非静态的）、不同类（子类和超类）和不同的接口（子接口，实现类和超接口）的初始化顺序，也很重要类。
+    事实上很多核心Java面试题和SCJP问题都是基于这些概念，下面是类初始化的一些规则：
+
+    	类从顶至底的顺序初始化，所以声明在顶部的字段的早于底部的字段初始化。
+   	超类早于子类和衍生类的初始化。
+    	如果类的初始化是由于访问静态域而触发，那么只有声明静态域的类才被初始化，而不会触发超类的初始化或者子类的初始化即使静态域被子类或子接口或者它的实现类所引用。
+   	接口初始化不会导致父接口的初始化。
+        静态域的初始化是在类的静态初始化期间，非静态域的初始化时在类的实例创建期间。这意味这静态域初始化在非静态域之前。
+        非静态域通过构造器初始化，子类在做任何初始化之前构造器会隐含地调用父类的构造器，他保证了非静态或实例变量（父类）初始化早于子类。
+
+    始化例子：
+
+    这是一个有关类被初始化的例子，你可以看到哪个类被初始化
+
+    /**
+     * Java program to demonstrate class loading and initialization in Java.
+     */
+    public class ClassInitializationTest {
+     
+        public static void main(String args[]) throws InterruptedException {
+     
+            NotUsed o = null; //this class is not used, should not be initialized
+            Child t = new Child(); //initializing sub class, should trigger super class initialization
+            System.out.println((Object)o == (Object)t);
+        }
+    }
+     
+    /**
+     * Super class to demonstrate that Super class is loaded and initialized before Subclass.
+     */
+    class Parent {
+        static { System.out.println("static block of Super class is initialized"); }
+        {System.out.println("non static blocks in super class is initialized");}
+    }
+     
+    /**
+     * Java class which is not used in this program, consequently not loaded by JVM
+     */
+    class NotUsed {
+        static { System.out.println("NotUsed Class is initialized "); }
+    }
+     
+    /**
+     * Sub class of Parent, demonstrate when exactly sub class loading and initialization occurs.
+     */
+    class Child extends Parent {
+        static { System.out.println("static block of Sub class is initialized in Java "); }
+        {System.out.println("non static blocks in sub class is initialized");}
+    }
+     
+    Output:
+    static block of Super class is initialized
+    static block of Sub class is initialized in Java
+    non static blocks in super class is initialized
+    non static blocks in sub class is initialized
+    false
+
+从上面结果可以看出：
+
+    超类初始化早于子类
+    静态变量或代码块初始化早于非静态块和域
+    没使用的类根本不会被初始化，因为他没有被使用
+
+再来看一个例子：
+
+    /**
+     * Another Java program example to demonstrate class initialization and loading in Java.
+     */
+     
+    public class ClassInitializationTest {
+     
+        public static void main(String args[]) throws InterruptedException {
+     
+           //accessing static field of Parent through child, should only initialize Parent
+           System.out.println(Child.familyName);
+        }
+    }
+     
+    class Parent {
+        //compile time constant, accessing this will not trigger class initialization
+        //protected static final String familyName = "Lawson";
+     
+        protected static String familyName = "Lawson";
+     
+        static { System.out.println("static block of Super class is initialized"); }
+        {System.out.println("non static blocks in super class is initialized");}
+    }
+     
+    Output:
+    static block of Super class is initialized
+    Lawson
+
+分析：
+
+    这里的初始化发生是因为有静态域被访问，而且不一个编译时常量。如果声明的”familyName”是使用final关键字修饰的编译时常量使用（就是上面的注释代码块部分）超类的初始化就不会发生。
+    尽管静态与被子类所引用但是也仅仅是超类被初始化
+
+还有另外一个例子与接口相关的，JLS清晰地解释子接口的初始化不会触发父接口的初始化。强烈推荐阅读JLS14.4理解类加载和初始化细节。以上所有就是有关类被初始化和加载的全部内容。
+
+静态多态与动态多态：https://blog.csdn.net/o9109003234/article/details/105697509?utm_term=java%E9%9D%99%E6%80%81%E5%A4%9A%E6%80%81%E5%92%8C%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6&utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduweb~default-1-105697509&spm=3001.4430
+---本质上多态分两种：
+编译时多态（又称静态多态）
+运行时多态（又称动态多态）
+重载（overload）就是编译时多态的一个例子，编译时多态在编译时就已经确定，运行时运行的时候调用的是确定的方法。
+我们通常所说的多态指的都是运行时多态，也就是编译时不确定究竟调用哪个具体方法，一直延迟到运行时才能确定。这也是为什么有时候多态方法又被称为延迟方法的原因。
+---动态多态通常有两种实现方法：
+子类继承父类（extends）
+类实现接口（implements）
+无论是哪种方法，其核心之处就在于对父类方法的改写或对接口方法的实现，以取得在运行时不同的执行效果。
+要使用多态，在声明对象时就应该遵循一条法则：声明的总是父类类型或接口类型，创建的是实际类型。举例来说，假设我们要创建一个ArrayList对象，声明就应该采用这样的语句：List list=new ArrayList();
+而不是:List list=new ArrayList();
+在定义方法参数时也通常总是应该优先使用父类类型或接口类型，例如某方法应该写成：public void dosomething(List list);
+而不是:public void dosomething(ArrayList list);
+这样声明最大的好处在于结构的灵活性：假如某一天我认为ArrayList的特性无法满足我的要求，我希望能够用LinkedList来代替它，那么只需要在对象创建的地方把new ArrayList()改为new LinkedList即可，其它代码一概不用改动。
+The programmer (and the program) does not have to know the exact type of the object in advance, and so the exact behavior is determined at run-time (this is called late binding or dynamic binding).
+
+虚拟机会在执行程序时动态调用实际类的方法，它会通过一种名为动态绑定（又称延迟绑定）的机制自动实现，这个过程对程序员来说是透明的。
+    
+https://www.sohu.com/a/281269310_100154842
+1、静态多态（编译时多态）：
+程序在编译时就知道调用哪个方法
+方法重载
+2、动态多态（运行时多态）：
+程序在运行时才知道调用哪个方法
+方法重写
+产生动态多态的条件：a.有继承  
+b.有方法重写
+c.父类的引用指向子类的实例
+本质：多态的本质就是将子类对象赋值给父类变量,在运行时期会表现出具体的子类特征(调用子类的重写方法)。    
