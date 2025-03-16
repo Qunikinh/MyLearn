@@ -6,7 +6,8 @@
         "math.h": "c",
         "limits": "c",
         "4,c": "cpp",
-        "algorithm": "c"
+        "algorithm": "c",
+        "t.C": "cpp"
     },
     "Codegeex.GenerationPreference": "line by line",
     "marscode.enableCodelens": {

@@ -43,7 +43,7 @@ Node* Find(Node *head,int x){
 void Delete(Node *p){
     if (p->next==NULL)
     {
-        p->prev->next=NULL;
+        p->prev->next=NULL;//!要正确处理边界
         free(p);
         return;
     }
