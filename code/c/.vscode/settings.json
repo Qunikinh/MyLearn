@@ -21,7 +21,9 @@
         "t.C": "cpp",
         "a_9.C": "cpp",
         "random": "cpp",
-        "a_10.C": "cpp"
+        "a_10.C": "cpp",
+        "b_2.C": "cpp",
+        "b_3.C": "cpp"
     },
     "Codegeex.GenerationPreference": "line by line",
     "Codegeex.CompletionDelay": 3

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssBOX</title>
+        <style>
+        #box1{
+            width: 20px;
+            height: 20px;
+            background-color: red;/* 文本 */
+            border: 10px solid yellow;/* 边框 */
+            padding: 20px;/* 内边距 */
+            margin: 20px;/* 外边距 */
+        }
+        #box2{
+            width: 320px;
+            height: 200px;
+            background-color:aliceblue;
+            border-bottom: 10px double green;/* groove ridge inset outset */
+            border-left: 10px solid yellow ;
+            border-right: 10px dotted rgb(0, 183, 255) ;
+            border-top: 10px dashed rgb(255, 0, 230) ;
+            border-radius: 30% 50% 10% 0% / 30% 50% 10% 0%;
+            box-shadow: inset 10px 10px 20px 3px rgb(116, 242, 223);
+        }
+        #box3{
+            width: 170px;
+            height: 300px;
+            padding: 30px;
+            border: 10px solid rgb(177, 230, 251);
+            margin: 50px;
+            margin-left: 220px;
+        }
+        
+        #a1,#a2{
+            width: 150px;
+            height: 150px;
+        }
+        #a1{
+            background-color: rgb(255, 236, 131);
+            margin: 0 350px;
+            margin-bottom: 20px;
+            border-radius: 0 50% 50% 0;
+        }
+        #a2{
+            background-color: rgb(255, 131, 131);
+            margin: 0 300px;
+            margin-top: -120px;
+            border-radius: 50% 0 0 50%;
+        }
+        #box4{
+            width: 500px;
+            height: 500px;
+            background-color: rgb(214, 255, 170);
+            background-image: url("/MyLearn/img/2.svg");
+            background-repeat:repeat-y;
+            background-position: 10% 30%;
+            background-size: 20% 20%;
+        }
+        
+        div b{
+            border: 2px dotted burlywood;
+            margin-bottom: 50px;
+        }
+        q{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="box1"></div>
+        <img src="/MyLearn/img/4.1.png" alt="图片加载失败">
+        <p>
+            <q>文本：conTEXT</q>
+            <q>边框：border</q>
+            <q>内边距：padding</q>
+            <q>外边距：margin</q>
+        </p>
+
+        <div id="box2">
+            <p><b>border</b><br>
+                border: width style color <br>
+                style : solid dashed dotted double <br>
+                redius: 圆角(左上,右上,右下,左下) <br>
+                （水平半径/垂直半径）<br>
+                shadow: 阴影<br>(水平偏移 垂直偏移 模糊半径 展开半径 颜色) <br>
+            </p>
+        </div>
+
+        <div id="box3">
+            <p><b>padding&margin</b>
+                1：上下左右 <br>
+                2：上下 左右 <br>
+                3：上 左右 下 <br>
+                4：上 右 下 左  <br>
+            </p>
+        </div>
+
+        <div>
+            <div id="a1"><p><b>margin合并</b></p></div>
+            <div id="a2"></div><br>
+        </div>
+
+        <div>
+            <div id="box4"><br><br>
+                <div id="box3"><b>background</b>
+                    <p>background-color: <br>背景颜色</p>
+                    <p>background-image: 背景图片</p>
+                    <p>background-repeat: 背景图片是否重复</p>
+                    <p>background-position: 背景图片位置</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
