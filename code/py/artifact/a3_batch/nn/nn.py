@@ -28,12 +28,12 @@ loss_f =nn.BCELoss()
 threshold = 0.5 #阈值，用于二分类问题
 
 datapath = "artifact/a3_batch/titanic/Titanic_data.csv"
-save_path = os.path.join(os.getcwd(), "artifact/a3_batch/nn/epochsaves")
+save_path = os.path.join(os.getcwd(), "artifact/a3_batch/epochsaves")
 if os.path.exists(save_path) is False: os.makedirs(save_path)
 
 #todo 数据集加载
 # 加载数据
-custom_dataset = titanic("artifact/a3_batch/titanic/Titanic_data.csv")
+custom_dataset = titanic("py/artifact/a3_batch/titanic/Titanic_data.csv")
 # 划分训练集、验证集和测试集
 train_size = int(len(custom_dataset) * 0.7)
 val_size = int(len(custom_dataset) * 0.2)

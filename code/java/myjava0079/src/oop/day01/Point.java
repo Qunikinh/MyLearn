@@ -7,6 +7,7 @@ public class Point {
         this.y=y;
     }
     public Point(int x){
+
         this(x,x);
     }
     public double distance(){
