@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 1px solid black;
+        /* boxbackgrand */
+        background-image: url("/MyLearn/img/5.1.jpeg");
+        /* 设置背景图片的路径 */
+        background-position: 50% 50%;
+        /* 设置背景图片的位置，50% 50% 表示图片在容器中水平和垂直方向上都居中 */
+        background-repeat: repeat-y;
+        /* 设置背景图片的重复方式，repeat-y 表示图片在垂直方向上重复，水平方向不重复 */
+        background-size: 50%;
+        /* 设置背景图片的尺寸，50% 表示图片的宽度和高度都缩放到容器宽度和高度的50% */
+        padding: 200px;
+        margin: auto auto;
+        box-shadow: 20px 20px 20px 10px gray inset, -20px -20px 20px 10px inset skyblue;
+    }
+
+    #box2 {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        border: 1px solid black;
+        background-position: 50% 50%;
+        background-image: url("/MyLearn/img/5.1.jpeg");
+        background-position: 50% 50%;
+        background-repeat: repeat-y;
+        background-size: cover;
+        background-attachment: fixed;
+        /* scroll：背景图像会随着页面的其余内容一起滚动。这是默认值。
+fixed：背景图像固定在视口（viewport）中，不随页面的其余内容滚动。
+local：背景图像会随着元素内容的滚动而滚动，但不会随着页面滚动而滚动。 */
+        padding: 200px;
+        margin: auto auto;
+        box-shadow: 20px 20px 20px 10px gray inset, -20px -20px 20px 10px inset skyblue;
+    }
+
+    .box {
+        width: 400px;
+        height: 400px;
+        border: 50px dotted red;
+        background-color: gray;
+        padding: 50px;
+        background-image: url("/MyLearn/img/2.svg");
+        background-repeat: no-repeat;
+    }
+
+    /* background-clip 属性的值包括：
+border-box：背景绘制从边框盒子开始，延伸到边框的外边缘。
+padding-box：背景绘制从内边距盒子开始，延伸到内边距的外边缘。
+content-box：背景绘制从内容盒子开始，只覆盖内容区域。
+text：背景只绘制在文本的前景色范围内（需要浏览器支持）。 */
+    .a1 {
+        background-clip: content-box;
+        background-origin: content-box;
+    }
+
+    .a2 {
+        background-clip: padding-box;
+        background-origin: padding-box;
+    }
+
+    .a3 {
+        background-clip: border-box;
+        background-origin: border-box;
+    }
+</style>
+
+<body>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <div class="box a1"></div>
+    <div class="box a2"></div>
+    <div class="box a3"></div>
+</body>
+
+</html>
