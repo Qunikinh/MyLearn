@@ -2,7 +2,8 @@
     "files.associations": {
         "t.C": "cpp",
         "a_4.C": "cpp",
-        "a_1.C": "cpp"
+        "a_1.C": "cpp",
+        "b_3.C": "cpp"
     },
     "Codegeex.CompletionDelay": 3,
     "Codegeex.GenerationPreference": "line by line"
