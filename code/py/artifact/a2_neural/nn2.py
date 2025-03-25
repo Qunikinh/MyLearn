@@ -93,7 +93,7 @@ def main(lr=0.01, epochs=100):
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
     # 创建保存权重的目录
-    weight_path = os.path.join(os.getcwd(), "result/weight")
+    weight_path = os.path.join(os.getcwd(), "artifact/a2_neural/result/weight")
     if not os.path.exists(weight_path):
         os.makedirs(weight_path)
 
