@@ -3,7 +3,21 @@
         "t.C": "cpp",
         "a_4.C": "cpp",
         "a_1.C": "cpp",
-        "b_3.C": "cpp"
+        "b_3.C": "cpp",
+        "b_8.C": "cpp",
+        "b_1.C": "cpp",
+        "b_9.C": "cpp",
+        "b_2.C": "cpp",
+        "b_4.C": "cpp",
+        "b_7.C": "cpp",
+        "b_6.C": "cpp",
+        "a_5.C": "cpp",
+        "b_9-2.C": "cpp",
+        "b_10.C": "cpp",
+        "b_11.C": "cpp",
+        "b_10-2.C": "cpp",
+        "b_5.C": "cpp",
+        "b_5-x.C": "cpp"
     },
     "Codegeex.CompletionDelay": 3,
     "Codegeex.GenerationPreference": "line by line"
