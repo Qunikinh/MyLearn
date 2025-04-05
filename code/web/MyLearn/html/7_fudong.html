@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        text-align: center;
+        line-height: 300px;
+        font-size: 50px;
+    }
+
+    .c1 {
+        float: left;
+        width: 300px;
+        background-color: aqua;
+    }
+
+    .c2 {
+        float: right;
+        height: 300px;
+        background-color: yellow;
+    }
+
+    .wrap {
+        border: 1px solid blue;
+        width: 936px;
+        overflow: hidden;
+        /* 解决高度塌陷 */
+    }
+
+    .wrap .box {
+        float: left;
+        margin: 5px;
+    }
+
+    .d1 {
+        background-color: coral;
+        position: relative;
+        z-index: 20;
+        /* 层次，前提：有position定位 */
+    }
+
+    .d2 {
+        background-color: palevioletred;
+        position: relative;
+        top: -100px;
+        left: 200px;
+    }
+
+    .d3 {
+        background-color: palegreen;
+        position: absolute;
+        top: 2250px;
+        left: 100px;
+    }
+
+    .d4 {
+        background-color: paleturquoise;
+    }
+
+    .d5 {
+        background-color: darksalmon;
+        position: fixed;
+        top: 600px;
+        left: 600px
+    }
+</style>
+
+<body>
+    <div class="box c1">c1</div>
+    <div class="box c2">c3</div>
+    <div class="box c2" style="float: left;">c2</div>
+    <div class="box c1" style="float: right;">c6</div>
+    <div class="box c1">c4</div>
+    <div class="box c2">c5</div>
+    <div class="box c2">c9</div>
+    <div class="box c1">c7</div>
+    <div class="box c1">c8</div>
+    <div class="box" style="clear: both;">清除浮动块</div>
+    <div class="wrap">
+        <div class="box" style="background-color: red;">c1</div>
+        <div class="box" style="background-color: chartreuse;">c2</div>
+        <div class="box" style="background-color: yellow;">c3</div>
+        <div class="box" style="background-color: blue;">c4</div>
+        <div class="box" style="background-color: deeppink;">c5</div>
+        <div class="box" style="background-color: gold;">c6</div>
+        <div class="box" style="background-color: hotpink;">c7</div>
+        <div class="box" style="background-color: greenyellow;">c8</div>
+        <div class="box" style="background-color: aquamarine;">c9</div>
+    </div>
+    <div class="box" style="clear: both;">清除浮动块</div>
+    <div class="box d1">d1</div>
+    <div class="box d2" style="line-height:50px;">d2 <br>相对定位</div>
+    <div class="box d3" style="line-height:50px;">d3 <br>绝对定位</div>
+    <div class="box d4">d4</div>
+    <div class="box d5">d5</div>
+
+</body>
+
+</html>

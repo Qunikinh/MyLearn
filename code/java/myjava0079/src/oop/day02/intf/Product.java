@@ -1,5 +1,5 @@
 package oop.day02.intf;
 
-public class Product {
-    double getPrice;
+public interface Product {
+    double getPrice();
 }

@@ -11,7 +11,7 @@ public class CharDemo {
 
         System.out.println(c1);
         // 0x4e2dSystem.out.println(Integer.toHexstring(c1));
-        char c2 = '中';
+        // char c2 = '中';
         // char c3='中';
         char c3 = 0x4e2d;
         char c4 = 'z';

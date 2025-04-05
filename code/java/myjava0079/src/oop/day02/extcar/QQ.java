@@ -5,4 +5,9 @@ public class QQ extends Car {
         String type = "A";
         return type;
     }
+
+    @Override
+    public void run() {
+        System.out.println("颠颠地跑");
+    }
 }

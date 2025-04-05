@@ -6,7 +6,7 @@ public interface Car {
     String TYPE_C = "C";
     String type = "D";
 
-    // String getTpye();
+    String getType();
 
     void run();
 
