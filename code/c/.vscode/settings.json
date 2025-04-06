@@ -31,7 +31,10 @@
         "d_1 copy 4.C": "cpp",
         "d_2.C": "cpp",
         "d_3.C": "cpp",
-        "d_4.C": "cpp"
+        "d_4.C": "cpp",
+        "d_3-x.C": "cpp",
+        "d_3-xx.C": "cpp",
+        "d_3x.C": "cpp"
     },
     "Codegeex.CompletionDelay": 3,
     "Codegeex.GenerationPreference": "line by line"
