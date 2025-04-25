@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.7.2/css/all.css" rel="stylesheet">
+<style>
+    #ul1 {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li:hover {
+        color: green;
+        background-size: 20px;
+        width: 125px;
+    }
+
+    #ul1 li,
+    th {
+        background: url(/MyLearn/img/2.svg) no-repeat left center;
+        background-size: 10px;
+        line-height: 30px;
+        text-indent: 1em;
+        margin-top: 5px;
+    }
+
+    ol {
+        list-style-type: upper-roman;
+
+    }
+
+    ol li {
+        width: 120px;
+        background: url(/MyLearn/img/2.svg) no-repeat right center;
+        background-size: 10px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        color: dimgray;
+        /* width: 320px; */
+        /* table-layout: auto; */
+    }
+
+    th,
+    td {
+        padding: 9px 15px;
+        border: 1px solid black;
+        width: 80px;
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    th:hover {
+        background-size: 100px;
+        background-position: 50% 0%;
+    }
+
+    td:hover {
+        background-color: #f5f5f5;
+        font-size: large;
+        color: black;
+        height: 30px;
+        width: 120px;
+    }
+
+    caption {
+        margin: 20px 0 20px;
+        font-weight: bold;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+    <ul id="ul1">
+        <li>11111111111</li>
+        <li>22222222222</li>
+        <li>33333333333</li>
+        <li>44444444444</li>
+    </ul>
+    <ol>
+        <li>upper-roman</li>
+        <li>upper-roman</li>
+        <li>upper-roman</li>
+        <li>upper-roman</li>
+    </ol>
+    <table>
+        <caption>表格</caption>
+        <thead>
+            <tr>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>body11</td>
+                <td colspan=" 2">body21&body31</td>
+                <td>body41</td>
+            </tr>
+            <tr>
+                <td>body12</td>
+                <td>body22</td>
+                <td>body32</td>
+                <td>body42</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>foot11</td>
+                <td rowspan="2">foot21</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>foot12</td>
+                <td>foot32</td>
+                <td>foot42</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div>
+        <input type="text" name="id"><br>
+        <input type="password" name="pd">
+    </div>
+</body>
+
+</html>

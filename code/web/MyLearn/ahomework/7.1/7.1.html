@@ -22,12 +22,12 @@
     .box {
         width: 1000px;
         height: 550px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         background-image: url("7.1.jpg");
         background-size: 800px 550px;
         background-repeat: no-repeat;
         background-position: right;
-        position: fixed;
+        /* position: fixed; */
     }
 
     #box1 {
@@ -42,6 +42,7 @@
         font-size: 15px;
         line-height: 0;
         padding-top: 8px;
+        z-index: 100;
     }
 
     #box3 {
@@ -52,10 +53,23 @@
         position: relative;
         top: 20px;
     }
+
+    /* #pic {
+        background-image: url("7.1.jpg");
+        background-repeat: no-repeat;
+        background-size: 800px 550px;
+        position: fixed;
+        left: 210px;
+        width: 800px;
+        height: 550px;
+        z-index: 1; */
+    /* } */
 </style>
 
 <body>
+
     <div class="box">
+        <!-- <div id="pic"></div> -->
         <div class="boxx">
             <div id="box1">
                 <h3>淳安县下姜村</h3>

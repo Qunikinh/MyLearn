@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 10px;
+        font-weight: 400;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    #jishu {
+        background-color: gainsboro;
+    }
+
+    /* tr:nth-child(even) {
+        background-color: gainsboro;
+    } */
+
+    tr:hover {
+        background-color: lightgreen;
+    }
+
+    #xx {
+        color: red;
+        font-weight: 600;
+    }
+
+    th {
+        background-color: green;
+        color: white;
+    }
+
+    td:hover {
+        background-color: aquamarine;
+    }
+</style>
+
+<body>
+    <table>
+        <caption>水果进货表</caption>
+        <thead>
+            <th>名称</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>来源地</th>
+            <th>总价</th>
+        </thead>
+        <tbody>
+            <tr id="jishu">
+                <td>苹果</td>
+                <td>5</td>
+                <td>20</td>
+                <td rowspan="2">A农场</td>
+                <td id="xx">100</td>
+            </tr>
+            <tr>
+                <td>香蕉</td>
+                <td>8</td>
+                <td>20</td>
+                <td id="xx">160</td>
+            </tr>
+            <tr id="jishu">
+                <td>橘子</td>
+                <td>6</td>
+                <td>30</td>
+                <td>B农场</td>
+                <td id="xx">180</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <td colspan="4">合计</td>
+            <td id="xx">440</td>
+        </tfoot>
+    </table>
+</body>
+
+</html>

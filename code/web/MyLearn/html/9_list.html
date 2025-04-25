@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: auto;
+    }
+
+    fieldset {
+        width: 500px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 1%;
+    }
+
+    legend {
+        color: darkcyan;
+    }
+
+    input,
+    select {
+        margin: 5px auto;
+        padding: 5px;
+        font-size: 1em;
+        width: 97%;
+        outline: none;
+        border-radius: 0.6cap;
+        border: 1px solid rgb(106, 106, 106);
+    }
+
+    input:hover {
+        background-color: rgb(241, 241, 241);
+        border: 1px solid lightseagreen;
+    }
+
+    input:focus {
+        background-color: rgb(241, 241, 241);
+        border: 1px solid blue;
+    }
+
+    #none {
+        width: 20px;
+    }
+
+    /* div input{
+        text-align: center;
+    } */
+
+    #final {
+        text-align: center;
+    }
+
+    input[type="submit"] {
+        width: 100px;
+        text-align: center;
+        color: white;
+    }
+
+    #color {
+        width: 70px;
+        height: 50px;
+    }
+
+    label {
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>个人基本信息</legend>
+            <div id="massage">
+                <label for="name">用户名：</label><br><input type="text" name="name" id="name" required
+                    placeholder="请输入用户名"><br>
+                <label for="password">密码：</label><br><input type="password" name="password" id="password" required
+                    placeholder="请输入密码"><br>
+                <label for="phone">电话：</label><br><input type="number" maxlength="11" name="phone" id="phone" required
+                    placeholder="eg:138xxxxxxxx"><br>
+                <label for="email">邮箱：</label><br><input type="email" name="email" id="email" required
+                    placeholder="eg:xxx@xxx.com"><br>
+                <label for="birth">出生日期：</label><br><input type="date" name="birth" id="birth" required
+                    placeholder="年/月/日"><br>
+                <label for="age">年龄：</label><br><input type="number" name="age" id="age" required><br>
+                <label for="sex">性别：</label><br>
+                <input id="none" type="radio" name="sex" id="male">男
+                <input id="none" type="radio" name="sex" id="female">女<br>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>补充信息</legend>
+            <div>
+                <label for="address">国家:</label><br>
+                <select name="address" id="address">
+                    <option value="none">-请选择-</option>
+                    <option value="china">中国</option>
+                    <option value="america">美国</option>
+                    <option value="japan">日本</option>
+                    <option value="korea">韩国</option>
+                    <option value="britain">英国</option>
+                </select><br>
+                <label for="hobby">爱好：</label><br>
+                <input id="none" type="checkbox" name="shore" id="b1">篮球
+                <input id="none" type="checkbox" name="shore" id="b2">足球
+                <input id="none" type="checkbox" name="shore" id="b3">羽毛球
+                <input id="none" type="checkbox" name="shore" id="b4">乒乓球
+                <input id="none" type="checkbox" name="shore" id="b5">跑步
+                <input id="none" type="checkbox" name="shore" id="b6">跳高
+                <br>
+                <label for="img">上传头像：</label>
+                <input type="file" name="img" id="img"><br>
+                <label for="color">幸运色:</label><br>
+                <input id="color" type="color" name="color" id="color"><br>
+                <label for="introduce">个人介绍:</label><br>
+                <textarea style="font-size: 20px;" name="introduce" id="introduce" cols="48" rows="5"
+                    placeholder="介绍一下你自己吧！"></textarea><br>
+                <div id="final">
+                    <input style="background-color: cadetblue;" type="submit" value="提交" id="submit">
+                    <input style="background-color: gray;" type="submit" value="重置" id="submit">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
