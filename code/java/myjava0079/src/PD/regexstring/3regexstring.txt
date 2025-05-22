@@ -1,0 +1,344 @@
+讲课顺序: StringDemo, StaticStringDemo, StringAPIDemo, StringBuilderAPIDemo, StringBuilderPKStringDemo, StringRegexDemo,（Test,） UserAnswerParseDemo  学生完成实验4
+
+1、字符串,一串字符： String, StringBuilder， char[]
+   String 字符串 = char[] + 操作(toUpperCase(), concat()，...)
+   类: 数据+相关的操作  
+   char数组只是数据, 没有操作
+  
+ (1)字符串"字面量(直接量)"都是String类型实例
+     "字符串常量"
+     public static final String TYPE = "car";       
+ (2）Stirng 内部就是一个char[],有序号,index, 从0开始
+ (3) String初始化的方法有多种 : p157
+     1) 静态字符串字符串字面量 String，是输入输出时候最常用的数据类型。
+    	 String 的性能严重影响Java的性能，java 及其变态的优化的Stirng：StringBuffer、StringBbuilder。
+    	 String API 有一个实现原则: 对象内容永远不变, 也就是说: String对象永远不变。为性能提供极致的优化：如果改变了内容就返回新字符串, 否则返回原字符串:
+    
+         a. String 字面量(直接量), 如果相同, 会替换为同一个String对象的引用, 常量连接的结果也被优化为一个字符串。 
+            String API, 如果返回结果与原字符串不同, 结果一定是新字符串对象 ;如果返回结果与原字符串相同, 一般是原字符串。 性能好! 
+         b. Java将字面量和常量(基本类型,String等)的运算,在编译期间执行；
+         c. Java将字符串字面量和常量，创建在静态缓冲池, 尽可能使用同一个对象。 静态缓冲池也在堆中。（s1+s2 的结果 ，字面量也在静态缓冲池中）；   
+     2) 动态创建的字符串实例, 不在静态池中分配, 是新对象, 如: new String()。    
+
+  (4）String 的比较, equals(), hashCode()， ==，对象比较
+  (5）String API ,字符串的常用方法, 这些方法如果返回String 一般是一个新String对象，toString() 除外。
+  
+    API中的方法，常用的:
+    charAt() 
+    length()
+    trim()
+    indexOf()
+    lastIndexOf()
+    endsWith()
+    startsWith()
+    substring(int start, int end)
+    substring(int start)
+    split()    
+    toUpperCase()
+    toLowerCase()
+    String str = new String(new char[]{'1','2','3'});
+    char[] chs = str.toCharArray();
+    matches()
+
+2、String与StringBuilder
+   (1)String的工作原理：  String = char[] + 操作 
+      String 是不变的字符串, char[]数组内容不可变。 任何操作，一旦结果与原字符串内容不同, 就复制char[]创建新的字符串对象，原String对象不变，即char[]数组内容永远不变。
+      String应用于: 基本的数据 交互, 输入输出
+   (2)StringBuilder 的工作原理 :
+      StringBuilder=char[] + 对数组内容的操作，StringBuilder是采用变长数组算法维护的char数组,必要时候扩容。
+      StringBuilder是对同一个char数组内容进行维护, 是内容可变的字符串。
+      StringBuilder应用于: 字符串数据的计算(增删改查)
+
+      简单说: StringBuilder 的(方法操作)性能好于 String。
+      应用中: 为了"追求极致"的字符串操作性能使用: char[]+算法； 大量的"字符串计算"使用: StirngBuilder； String使用在大多数的场合
+
+
+3、 正则表达式: 用于检索字符串内容的匹配规则。
+    比如，正则表达式: pass用于检索字符串: passwd is password file，那么，在 (0, 4] 匹配成功，在 (10, 14] 匹配成功。
+ 
+    应用广泛，学习建议: 1）要能够读懂"正则表达式"  2）能够写出简单的"正则表达式"   3）可以应用于: java grep vi
+
+  1）字符集:[1234] 表示 1,2,3,4 之一
+            [^12] 表示除了 1,2
+            [1-5] 表示 1,2,3,4,5
+            [a-f] 表示 a-f 之间的
+            [0-9a-fA-F] 表示:一个16进制字符            
+            0[xX][0-9a-fA-F]{1,8}
+            [\w]{8,15}
+    预定义字符集:
+            \d : [0-9]
+            . : 任意字符
+            \w: 单词字符 [0-9a-zA-Z_]
+            \s: 匹配空白: 空格 \t \n \r \b \p
+            
+            \D
+            \S
+            \W 
+  2）{m,n} 数词
+       {n}
+       {m,n}
+       ? : {0,1}
+       + : {1,}
+       * : {0,}  
+  3） ^ 开头
+     $ 结尾  
+  
+  
+邮政编码: ^[0-9][0-9][0-9][0-9][0-9][0-9]$
+         ^[0-9]{6}$
+         ^\d{6}$
+         
+用户名规则: ^\w{8,10}$
+电话号:  +86 13912345678
+        ^(\+86|0086)?\s?\d{11}$
+身份证号码: ^\d{15}(\d{2}[0-9xX])?$
+一个点的坐标: ^\d+(,\s*|\s+)\d+$   
+            ^\d+[,\s]\s*\d+$ 
+答案规则:^\s*A?(\s+|,\s*)B?(\s+|,\s*)C?(\s+|,\s*)D?\s*$
+日期: 2020-01-30 
+       ^\d{4}-\d{2}-\d{2}$
+       ^\d{4}(-\d{2}){2}$
+
+  IP 地址: 192.168.0.2
+          ^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$
+          ^\d{1,3}(\.\d{1,3}){3}$
+          ^(\d{1,3}\.){3}\d{1,3}$
+           
+4、String 对正则表达式的支持
+  .matches() 匹配正则表达式，返回一个boolean值（true/false）
+  .split("[,\s\|]") 切分字符串为字符串数组
+  .replaceAll()
+  .replaceFirst()
+
+  Integer.parseInt() 转换字符串到整数: 如: "23"-> 23
+
+5、http://blog.sina.com.cn/s/blog_6a0cd5e5010102lx.html 
+   Java中正则表达式验证讲解和实例（转） (2012-02-02 11:29:41)转载
+   标签： 正则表达式  字符串 26个英文字母  浮点数  词法分析  杂谈	
+   分类： Java正则表达式应用
+       本文将介绍如何在Java中使用正则表达式来处理文本数据。正则表达式就是一个字符串，但和普通的字符串不同的是，正则表达式是对一组相似字符串的抽象，如下面的几个字符串：
+   a98b c0912d c10b a12345678d ab我们仔细分析上面五个字符串，可以看出它们有一个共同特征，就是第一个字符必须是'a'或'c'，最后一个字符必须是'b'或'd'，而中间的字符是任意
+   多个数字组成（包括0个数字）。因此，我们可以将这五个字符串的共同特点抽象出来，这就产生了一个正则表达式：[ac]\\d*[bd]。而根据这个正则表达式，我们可以写出无穷多个满足
+   条件的字符串。
+       在Java中使用正则表达式的方法非常多，最简单的就是和字符串一起使用。在String中有四个方法可以使用正则表达式：matches()、split()、replaceAll()和replaceFirst()。
+
+一、matches方法
+   matches方法可以判断当前的字符串是否匹配给定的正则表达式。如果匹配，返回true，否则，
+ 返回false。matches方法的定义如下：
+            public boolean matches(String regex)
+   如上面给出的正则表达式我们可以用如下程序验证。
+String[] ss = new String[]{"a98b", "c0912d", "c10b", "a12345678d", "ab"};
+for(String s: ss)
+System.out.println(s.matches("[ac]\\d*[bd]"));
+输出结果：
+true
+true
+true
+true
+true
+
+     下面简单解释一下这个正则表达式的含义。如果我们学过编译原理的词法分析，就会很容易理解上面
+ 的正则表达式（因为正则表达式的表示方法和词法分析中的表达式类似）。如在 [...]中的相当于或"|"，
+ 如[abcd]相当于a|b|c|d，也就是a或b或c或d。如上面的正则表达式的开头部分是[ac]，就代表着字符串、
+ 的开头只能是a或c。[bd]表达字符串结尾只能是b或d。而中间的\d表达0-9的数字，由于\在正则表达式中
+ 有特殊含义，所以用\\来表示\。而*表示有0或无穷多个（这在词法分析中叫*闭包），由于*跟在\d后面，
+ 因此表达有0或无穷多个数字。
+
+二、split方法
+    split方法使用正则表达式来分割字符串，并以String数组的形式返回分割结果。split有两种重载形式，它们定义如下：
+    public String[] split(String regex)
+    public String[] split(String regex, int limit)
+         如下面的代码将使用split的第一种重载形式来分割HTTP请求头的第一行，代码如下：
+    String s = "GET /index.html HTTP/1.1";
+    String ss[] = s.split(" +");
+    for(String str: ss) 
+       System.out.println(str);
+
+输出结果：
+GET
+/index.html
+HTTP/1.1
+      在使用split的第一种重载形式时应注意，如果分割后的字符串最后有空串，将被忽略。如使用正则表达式\d
+来分割字符串a0b1c3456时，得到的数组的长度为3，而不是7。
+      在split的第二种重载形式中有一个limit参数，要分三种情况讨论：
+
+1. 大于0： 如limit的值为n，那么将对正则表达式使用n-1次，下面的代码：
+String s = "a0b1c3456";
+String ss[] = s.split("\\d", 3);
+for(String str: ss)
+System.out.println(str);
+输出结果:
+
+a
+b
+c3456
+         从输出结果可以看出，程序只对" a0b1c3456"使用了两次正则表达式，也就是在少扫描完字符'1'后，不管后面
+有没有满足条件的字符串，都将后面的字符串作为一个整体来作为返回数组的最后一个值。
+
+2. 小于0： 不忽略结尾的空串。也就是上面的例子返回数组的长度应该是7，而不是3。
+3. 等于0：这是默认值，相当于split的第一种重载形式。
+
+
+三、replaceAll 和 replaceFirst方法
+
+为两个方法的定义如下：
+public String replaceAll(String regex, String replacement)
+public String replaceFirst(String regex, String replacement)
+
+这两个方法用replacement替换当前字符串中和regex匹配的字符串。使用方法很简单，这里不再详述，感兴趣的读者可以参考相关的文档。
+
+        在Java中，我们为了查找某个给定字符串中是否有需要查找的某个字符或者子字串、或者对字符串进行分割、
+或者对字符串一些字符进行替换/删除，一般会通过if-else、for 的配合使用来实现这些功能 。如下所示：
+Java代码
+public class Test{
+public static void main(String args[]) {
+String str="@Shang Hai Hong Qiao Fei Ji Chang";
+boolean rs = false;
+for(int i=0;i<str.length();i++){
+char z=str.charAt(i);
+if('a' == z || 'F' == z) {
+rs = true;
+break;
+}else{
+rs= false;
+}
+}
+System.out.println(rs);
+}
+}
+} 
+        这种方法使用简单直观，但是 难以解决复杂的工作，而且代码量也会增加很多，不利于维护。
+        这时，我们可以使用正则表达式来实现这些功能，而且代码简单易维护。下面就来介绍了Java中
+ 对字符串的正则表达式的几个常用的功能，具体情况如下所示（其中用到了java.util.regex包）：
+1.Java中在某个字符串中查询某个字符或者某个子字串
+Java代码
+String s = "@Shang Hai Hong Qiao Fei Ji Chang"; 　　
+String regEx = "a|F"; //表示a或F
+Pattern pat = Pattern.compile(regEx);
+Matcher mat = pat.matcher(s);
+boolean rs = mat.find();
+String s = "@Shang Hai Hong Qiao Fei Ji Chang"; 　　
+String regEx = "a|F"; //表示a或F
+Pattern pat = Pattern.compile(regEx);
+Matcher mat = pat.matcher(s);
+boolean rs = mat.find(); 如果s中有regEx，那么rs为true，否则为flase。
+       如果想在查找时忽略大小写，则可以写成Pattern pat=Pattern.compile(regEx,Pattern.CASE_INSENSITIVE);
+2.在某个文件中获取一段字符串
+Java代码
+String regEx = ".+\(.+)$";
+String s = "c:\test.txt";
+Pattern pat = Pattern.compile(regEx);
+Matcher mat = pat.matcher(s);
+boolean rs = mat.find();
+for(int i=1;i<=mat.groupCount();i++){
+　　System.out.println(mat.group(i));
+}
+String regEx = ".+\(.+)$";
+String s = "c:\test.txt";
+Pattern pat = Pattern.compile(regEx);
+Matcher mat = pat.matcher(s);
+boolean rs = mat.find();
+for(int i=1;i<=mat.groupCount();i++){
+　　System.out.println(mat.group(i));
+} 　
+      以上的执行结果为test.txt，提取的字符串储存在mat.group(i)中，其中i最大值为mat.groupCount();
+3.对字符串的分割
+Java代码
+String regEx=":";
+Pattern pat = Pattern.compile(regEx);
+String[] rs = pat.split("aa:bb:cc");
+String regEx=":";
+Pattern pat = Pattern.compile(regEx);
+String[] rs = pat.split("aa:bb:cc"); 　执行后，r就是{"aa","bb","cc"}
+如果用正则表达式分割就如上所示，一般我们都会使用下面更简单的方法：
+Java代码
+String s = "aa:bb:cc";
+String[] rs=s.split(":");
+String s = "aa:bb:cc";
+String[] rs=s.split(":");
+4.字符串的替换/删除
+Java代码
+String regEx="@+"; //表示一个或多个@
+Pattern pat=Pattern.compile(regEx);
+Matcher mat=pat.matcher("@@aa@b cc@@");
+String s=mat.replaceAll("#");
+String regEx="@+"; //表示一个或多个@
+Pattern pat=Pattern.compile(regEx);
+Matcher mat=pat.matcher("@@aa@b cc@@");
+String s=mat.replaceAll("#"); 　结果为"##aa#b cc##"
+　　
+　如果要把字符串中的@都给删除，只用要空字符串替换就可以了：
+Java代码
+String s=mat.replaceAll("");
+String s=mat.replaceAll(""); 　结果为"aab cc"
+注：对Pattern类的说明：
+1.public final class java.util.regex.Pattern是正则表达式编译后的表达法。
+下面的语句将创建一个Pattern对象并赋值给句柄pat：Pattern pat = Pattern.compile(regEx);
+有趣的是，Pattern类是final类，而且它的构造器是private。也许有人告诉你一些设计模式的东西，或者你自己查有关资料。这里的结论是：Pattern类不能被继承，我们不能通过new创建Pattern类的对象。
+因此在Pattern类中，提供了2个重载的静态方法，其返回值是Pattern对象（的引用）。如：
+Java代码
+public static Pattern compile(String regex) {
+return new Pattern(regex, 0);
+}
+public static Pattern compile(String regex) {
+return new Pattern(regex, 0);
+} 当然，我们可以声明Pattern类的句柄，如Pattern pat = null；
+2.pat.matcher(str)表示以用Pattern去生成一个字符串str的匹配器，它的返回值是一个Matcher类的引用。
+我们可以简单的使用如下方法：boolean rs = Pattern.compile(regEx).matcher(str).find();
+
+
+附 ： 常用的正则表达式：
+匹配特定数字：
+^[1-9]d*$　 　 //匹配正整数
+^-[1-9]d*$ 　 //匹配负整数
+^-?[1-9]d*$　　 //匹配整数
+^[1-9]d*|0$　 //匹配非负整数（正整数 + 0）
+^-[1-9]d*|0$　　 //匹配非正整数（负整数 + 0）
+^[1-9]d*.d*|0.d*[1-9]d*$　　 //匹配正浮点数
+^-([1-9]d*.d*|0.d*[1-9]d*)$　 //匹配负浮点数
+^-?([1-9]d*.d*|0.d*[1-9]d*|0?.0+|0)$　 //匹配浮点数
+^[1-9]d*.d*|0.d*[1-9]d*|0?.0+|0$　　 //匹配非负浮点数（正浮点数 + 0）
+^(-([1-9]d*.d*|0.d*[1-9]d*))|0?.0+|0$　　//匹配非正浮点数（负浮点数 + 0）
+评注：处理大量数据时有用，具体应用时注意修正
+匹配特定字符串：
+^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串
+^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串
+^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串
+^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串
+^w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串
+在使用RegularExpressionValidator验证控件时的验证功能及其验证表达式介绍如下:
+只能输入数字：“^[0-9]*$”
+只能输入n位的数字：“^d{n}$”
+只能输入至少n位数字：“^d{n,}$”
+只能输入m-n位的数字：“^d{m,n}$”
+只能输入零和非零开头的数字：“^(0|[1-9][0-9]*)$”
+只能输入有两位小数的正实数：“^[0-9]+(.[0-9]{2})?$”
+只能输入有1-3位小数的正实数：“^[0-9]+(.[0-9]{1,3})?$”
+只能输入非零的正整数：“^+?[1-9][0-9]*$”
+只能输入非零的负整数：“^-[1-9][0-9]*$”
+只能输入长度为3的字符：“^.{3}$”
+只能输入由26个英文字母组成的字符串：“^[A-Za-z]+$”
+只能输入由26个大写英文字母组成的字符串：“^[A-Z]+$”
+只能输入由26个小写英文字母组成的字符串：“^[a-z]+$”
+只能输入由数字和26个英文字母组成的字符串：“^[A-Za-z0-9]+$”
+只能输入由数字、26个英文字母或者下划线组成的字符串：“^w+$”
+验证用户密码:“^[a-zA-Z]w{5,17}$”正确格式为：以字母开头，长度在6-18之间，
+只能包含字符、数字和下划线。
+验证是否含有^%&’,;=?$”等字符：“[^%&’,;=?$x22]+”
+只能输入汉字：“^[u4e00-u9fa5],{0,}$”
+验证Email地址：“^w+[-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*$”
+验证InternetURL：“^http://([w-]+.)+[w-]+(/[w-./?%&=]*)?$”
+验证电话号码：“^((d{3,4})|d{3,4}-)?d{7,8}$”
+正确格式为：“XXXX-XXXXXXX”，“XXXX-XXXXXXXX”，“XXX-XXXXXXX”，
+“XXX-XXXXXXXX”，“XXXXXXX”，“XXXXXXXX”。
+验证身份证号（15位或18位数字）：“^d{15}|d{}18$”
+验证一年的12个月：“^(0?[1-9]|1[0-2])$”正确格式为：“01”-“09”和“1”“12”
+验证一个月的31天：“^((0?[1-9])|((1|2)[0-9])|30|31)$”
+正确格式为：“01”“09”和“1”“31”。
+匹配中文字符的正则表达式： [u4e00-u9fa5]
+匹配双字节字符(包括汉字在内)：[^x00-xff]
+匹配空行的正则表达式：n[s| ]*r
+匹配HTML标记的正则表达式：/< (.*)>.*|< (.*) />/
+匹配首尾空格的正则表达式：(^s*)|(s*$)
+匹配Email地址的正则表达式：w+([-+.]w+)*@w+([-.]w+)*.w+([-.]w+)*
+匹配网址URL的正则表达式：http://([w-]+.)+[w-]+(/[w- ./?%&=]*)?

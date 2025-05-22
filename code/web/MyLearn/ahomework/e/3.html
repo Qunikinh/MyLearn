@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验三：表单验证与动态提示</title>
+</head>
+<style>
+    input {
+        width: 300px;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .a {
+        margin-left: 10px;
+        color: gray;
+    }
+</style>
+
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>
+                <h1>注册表单</h1>
+            </legend>
+            <div id="massage">
+                <label for="email">邮箱：</label><input type="email" name="email" id="email" required
+                    placeholder="eg:xxx@xxx.com"><br>
+                <label for="password">密码：</label><input type="password" name="password" id="password" required
+                    placeholder="请输入6位密码"><br>
+            </div>
+            <p id="tishi" class="a">请输入内容...</p>
+            <button id="bt">提交</button>
+        </fieldset>
+        <script src="3.js"></script>
+</body>
+
+</html>

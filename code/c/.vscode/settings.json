@@ -34,7 +34,13 @@
         "d_4.C": "cpp",
         "d_3-x.C": "cpp",
         "d_3-xx.C": "cpp",
-        "d_3x.C": "cpp"
+        "d_3x.C": "cpp",
+        "e6.C": "cpp",
+        "e4.C": "cpp",
+        "e7.C": "cpp",
+        "e8.C": "cpp",
+        "e10.C": "cpp",
+        "e9.C": "cpp"
     },
     "Codegeex.CompletionDelay": 3,
     "Codegeex.GenerationPreference": "line by line"

@@ -1,0 +1,82 @@
+讲课顺序：Employee,ArrayListEmployeeDemo,LinkedListEmployeeDemo, User, HashMapUserDemo,HashSetDemo,HashMapDemo1  学生完成实验5(HashMapDemo2)   
+          CollectionDemo，ArrayListDemo,ListDemo,HashMapDemo2,IteratorDemo，IteratorHashMapTest,CollectionsDemo   
+
+    集合类是用来存放对象的，集合相当于一个容器，里面包含着一组对象，其中每个对象作为集合的一个元素。Java API提供的集合类在Java.util包中。
+    集合的结构图 ： P165 图7-8   
+
+1 集合框架 (Collection and Map, 集合与映射, 容器类(cpp)) 
+ 1) Collection 接口，集合概念, 没有说明元素是否重复和有序, 集合的根接口, 很少直接使用, 其他集合都是实现类: ArrayList, HashSet。
+ 2) List 接口，元素有先后次序, 元素有index位置, 元素可以重复。继承于Collection接口, 实现类: ArrayList, Vector, LinkedList
+ 3) Set 接口，元素无序, 没有重复元素, 是数学意义上的集合, 继承于 Collection 接口, 实现类: HashSet(是一个只有Key的HashMap)
+ 4) Map接口， 描述了:(key:value) 键值对成对放置的集合, key没有重复的, Value可以重复，key重复的话只算一个、会覆盖前面的。
+    实现类: HashMap(散列表算法实现)，TreeMap(二叉排序树实现,利用Key排序)， HashTable。Map适合检查查找。
+
+ 5）5.1) 集合复制, 默认的复制规则是浅表(浅层)复制
+   A clone() 方法    
+   B 使用复制构造器
+   Map map = new HashMap();
+   Map map2 = new HashMap(map);   
+   List list1 = new ArrayList();
+   List list2 = new LinkedList(list1);
+ 5.2) 同步化(线程安全的)：
+   List list = new ArrayList();   //synchronizedList 可以将非线程安全的list包装为线程安全的
+   list = Collections.synchronizedList(list);   //转换以后就相当于 Vector
+   HashMap map = new HashMap();    //synchronizedMap 可以将非线程安全的map包装为线程安全的
+   map = Collections.synchronizedMap(map);   
+ 5.3) 数组与集合的转换
+  a 数组转List(只读的) 
+     String[] names = {"A","B","C"};
+     List list = Arrays.asList(names);//只读list
+     list = new ArrayList(list); //复制为全功能List
+     Set set = new HashSet(list); //复制为Set集合
+  b 集合转数组
+     Object[] ary1 = list.toArray();//集合转Object[]
+     String[] ary2 = (String[])
+     list.toArray(new String[]{});  //集合转指定类型数组  
+ 5.4)Collection 与 Collections
+   Collection 抽象的集合概念,
+   Collections 集合静态工具类, 包含集合的工具方法
+      (如sort, 打乱(洗牌)等)
+ 5.5) Map的迭代, Map 是 (Key:Value) 组成的集合
+  A 对key:value 进行迭代
+    map.entrySet();
+  B 对Key进行迭代
+    map.keySet();
+  C 对Value进行迭代
+    map.values(); 
+  
+2 Java泛型简介
+ 1) Java5 以后有的, 在编译期间检查的类型约束。运行期不检查泛型。
+ 2) 可以用来约束类中元素的类型  
+ 3) HashMap VS Hashtable
+  A HashMap 新, 非线程安全, 不检查锁, 快
+  B Hashtable 旧 (1.2以前的) 线程安全, 检查锁, 慢一点
+  
+3 集合的迭代:遍历算法，迭代器
+ 1) 迭代操作: 播放列表的全部元素, 将扑克牌全部发放
+ 2) java使用Iterator 接口描述了迭代模式操作，Iterator 中的方法模式化设计, 专门配合while循环操作
+ 3) Iterator 的实例可以从集合对象获得, 是这个集合的一个元素序列。默认包含一个操作游标, 在第一个元素之前, hasNext() 方法检查游标是否有下一个元素, next() 方法移动游标到下一个元素，
+    并且返回这个元素引用。使用while配合这两个方法, 可以迭代处理集合的所有元素
+ 4) 迭代时可以使用迭代器的方法remove()删除刚刚迭代的元素。
+ 5）在迭代过程中, 不能使用集合方法(add, remove, set) 更改集合元素。
+ 6) ListIterator   P175 例7-37
+
+5 Collections 集合的工具类, Arrays 数组的工具类
+ 1) 排序, 二分查找, 打乱, 填充等操作 
+
+  
+6  String，StringBuffer与StringBuilder 区别在哪里呢？http://blog.163.com/yting_xmei1129/blog/static/226055043201382122858785/
+String，长度不可变的
+StringBuffer，长度可变，线程安全，因为它是线程安全的，所以执行效率就会低一点
+StringBuilder ，长度可变，线程不安全的，同理，线程不安全，执行效率就高一点了
+StringBuffer 跟 StringBuilder 长度基本是一样的，由于线程安全的问题，单线程建议用；
+StringBuilder ，多线程建议用
+ArrayList与Vector 的差别也是在线程安全方面：
+Vector，线程安全的，里面使用了synchronized这个同步方法，通常性能上较ArrayList差；
+ArrayList，线程不安全的，所以性能就比Vector差一点了。
+ArrayList与Vector  的方法也基本一样，单线程建议用ArrayList，多线程建议用Vector 
+
+7  练习：1）P172-176 例7-33、34、35、36、37、38
+	 2）统计字符出现的次数
+         3）P176 案例分析：利用ArrayList类存储银行账户类
+   完成实验5

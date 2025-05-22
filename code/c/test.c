@@ -1,5 +1,8 @@
 #include <stdio.h>
 
-int main() {
-    printf("Hello, World!\n");
+int main()
+{
+    int a;
+    a = 4 + NULL;
+    printf("%d\n", a);
 }
