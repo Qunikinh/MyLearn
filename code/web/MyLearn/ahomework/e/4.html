@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实验四：图片画廊</title>
+</head>
+<style>
+    #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-items: center;
+        width: 300%;
+    }
+
+    .z {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        overflow: hidden;
+        object-fit: cover;
+        display: none;
+    }
+
+    img {
+        width: 500px;
+    }
+</style>
+
+<body>
+    <h1>图片画廊</h1>
+    <button id="loading">加载图片</button>
+    <div id="gallery">
+        <img src="" alt="" id="1" class="z">
+        <img src="" alt="" id="2" class="z">
+        <img src="" alt="" id="3" class="z">
+        <img src="" alt="" id="4" class="z">
+        <img src="" alt="" id="5" class="z">
+        <img src="" alt="" id="6" class="z">
+        <img src="" alt="" id="7" class="z">
+        <img src="" alt="" id="8" class="z">
+        <img src="" alt="" id="9" class="z">
+    </div>
+    <hr>
+    <div>
+        <img src="" alt="" id="big">
+    </div>
+    <script src="4.js"></script>
+</body>
+
+</html>
