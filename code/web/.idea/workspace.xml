@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="559a0618-19db-4e55-9721-7cc07087a682" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/ChatRoom.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/ChatRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/Lobby.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/Lobby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../c/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../c/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/chat.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/src/main/java/com/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/src/main/java/tzc/chatroom/Login.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/src/main/java/tzc/chatroom/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/AbstractLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/DimensionInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/GridConstraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/GridLayoutManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/HorizontalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/LayoutState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/Spacer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/SupportCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/com/intellij/uiDesigner/core/VerticalInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/tzc/chatroom/Login$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chat/demo/target/classes/tzc/chatroom/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/src/main/java/tzc/chatroom/Login.form" beforeDir="false" afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/Login.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/chatroom/src/main/java/tzc/chatroom/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/../java/room/src/main/java/tzc/chatroom/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/code.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java/lib/junit-platform-console-standalone-1.12.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Others/ExploreScape-Travel-website/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Others/ExploreScape-Travel-website/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2xoyuEPOBU6moBPbEZ1ZkERrat4" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="559a0618-19db-4e55-9721-7cc07087a682" name="更改" comment="" />
+      <created>1748618941840</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748618941840</updated>
+      <workItem from="1748618942895" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
